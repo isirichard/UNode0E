@@ -5,10 +5,10 @@ setTimeout(function() {
 }, 3000);
 setTimeout(function() {
     console.log('Segundo Timeout');
-}, 0);
+}, 1000);
 setTimeout(function() {
     console.log('Tercer Timeout');
-}, 0);
+}, 1000);
 setTimeout(function() {
     console.log('Fin del programa');
 }, 0);
