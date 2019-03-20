@@ -60,8 +60,9 @@ const borrar = (descripcion) => {
     if (listadoPorHacer.length === nuevoListado.length) {
         return false;
     } else {
+sdsa
+        listadoPorHacer = nuevoListado;
 
-        listadoPorhacer = nuevoListado;
 
         guardarDB();
 
