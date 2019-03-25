@@ -16,7 +16,7 @@ hbs.registerPartials(__dirname + '/views/parciales');
 
 app.set('view engine', 'hbs');
 
-//helpers
+//helper
 
 
 app.get('/', (req, res) => {
