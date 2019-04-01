@@ -120,7 +120,7 @@ app.post('/', (req, res) => {
     row(doc, 190);
     row(doc, 210);
 
-    textInRowFirst(doc, 'Nombre o razón social', 95);
+    textInRowFirst(doc, resp1, 95);
     textInRowFirst(doc, 'RUT', 115);
     textInRowFirst(doc, 'Dirección', 135);
     textInRowFirst(doc, 'Comuna', 155);
