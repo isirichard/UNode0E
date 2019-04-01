@@ -14,103 +14,122 @@
 <div class="container">
   <div class="row">
     <div class="col">
-      <form action="/pdf" method="post">
+      <form action="/" method="post">
 
-<div class="jumbotron">
-  
+        <div class="jumbotron">
 
-        <input class="form-control" type="text" placeholder="Usuarios y factores humanos" readonly>
-        <!--Primera Pregunta-->
-        <div class="form-group">
-          <label for="formGroupExampleInput">1 ¿Quien usará el sistema?</label>
-          <input name="pre1" type="text" class="form-control" id="formGroupExampleInput" placeholder="Example input">
-        </div>
-        <!--Segunda Pregunta-->
-        <div>
-          <label for="formGroupExampleInput">2 ¿Habrá varios tipos de usuario?</label>
-        </div>
-        <div class="form-check form-check-inline">
-          <input name="pre2" class="form-check-input" type="radio" name="inlineRadioOptions2" id="inlineRadio1" value="option1">
-          <label class="form-check-label" for="inlineRadio1">1-2 (dueño - asistente)</label>
-        </div>
-        <div class="form-check form-check-inline">
-          <input name="pre2" class="form-check-input" type="radio" name="inlineRadioOptions2" id="inlineRadio2" value="option2">
-          <label class="form-check-label" for="inlineRadio2">2-4(trabajadores -cargo)</label>
-        </div>
-        <div class="form-check form-check-inline">
-          <input name="pre2" class="form-check-input" type="radio" name="inlineRadioOptions2" id="inlineRadio3" value="option3">
-          <label class="form-check-label" for="inlineRadio3">+4</label>
-        </div>
 
-        <!--Tercera Pregunta-->
-        <div>
-          <label for="formGroupExampleInput">3 ¿Cuál es el nivel de habilidad de cada tipo de usuario?</label>
-        </div>
-        <div class="form-check form-check-inline">
-          <input name="pre3" class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio1" value="option1">
-          <label class="form-check-label" for="inlineRadio1">inicial</label>
-        </div>
-        <div class="form-check form-check-inline">
-          <input name="pre3" class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio2" value="option2">
-          <label class="form-check-label" for="inlineRadio2">intermedio</label>
-        </div>
-        <div class="form-check form-check-inline">
-          <input name="pre3" class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio3" value="option3">
-          <label class="form-check-label" for="inlineRadio3">avanzado</label>
-        </div>
+          <input class="form-control" type="text" placeholder="Usuarios y factores humanos" readonly disabled>
+          <!--Primera Pregunta-->
+          <div class="form-group">
+            <label for="formGroupExampleInput">1 ¿Quien usará el sistema?</label>
+            <input name="pre1" type="text" class="form-control" id="formGroupExampleInput"
+              placeholder="Ingresa el Nombre Apellido">
+          </div>
 
-        <!--Cuarta Pregunta-->
-        <div>
-          <label for="formGroupExampleInput">4 ¿Qué clase de entrenamiento requerirá cada tipo de usuario?</label>
-        </div>
-        <div class="form-check form-check-inline">
-          <input name="pre4" class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio1" value="option1">
-          <label class="form-check-label" for="inlineRadio1">poco</label>
-        </div>
-        <div class="form-check form-check-inline">
-          <input name="pre4" class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio2" value="option2">
-          <label class="form-check-label" for="inlineRadio2">algo</label>
-        </div>
-        <div class="form-check form-check-inline">
-          <input name="pre4" class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio3" value="option3">
-          <label class="form-check-label" for="inlineRadio3">arto</label>
-        </div>
 
-        <!--Quinta Pregunta-->
-        <div>
-          <label for="formGroupExampleInput">5 ¿Cuán fácil le será al usuario comprender y utilizar el sistema?</label>
-        </div>
-        <div class="form-check form-check-inline">
-          <input name="pre5" class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio1" value="option1">
-          <label class="form-check-label" for="inlineRadio1">fácil</label>
-        </div>
-        <div class="form-check form-check-inline">
-          <input name="pre5" class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio2" value="option2">
-          <label class="form-check-label" for="inlineRadio2">difícil</label>
-        </div>
-        <div class="form-check form-check-inline">
-          <input name="pre5" class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio3" value="option3">
-          <label class="form-check-label" for="inlineRadio3">imposible</label>
-        </div>
+          <!--Segunda Pregunta-->
+          <div>
+            <label for="formGroupExampleInput">2 ¿Habrá varios tipos de usuario?</label>
+          </div>
+          <div class="custom-control custom-radio">
+            <input type="radio" id="customRadio21" name="pre2" class="form-check-input" value="option1">
+            <label class="form-check-label" for="customRadio21">1-2 (dueño - asistente)</label>
+          </div>
+          <div class="custom-control custom-radio">
+            <input type="radio" id="customRadio22" name="pre2" class="form-check-input" value="option2">
+            <label class="form-check-label" for="customRadio22">2-4 (trabajadores -cargo)</label>
+          </div>
+          <div class="custom-control custom-radio">
+            <input type="radio" id="customRadio23" name="pre2" class="form-check-input" value="option3">
+            <label class="form-check-label" for="customRadio23">+4</label>
+          </div>
 
-        <!--Sexta Pregunta-->
-        <div>
-          <label for="formGroupExampleInput">6 ¿Cuán difícil le resultará al usuario hacer uso indebido del
-            sistema?</label>
+          <div>
+            <input name="pre2Obs" type="text" class="form-control" id="formGroupExampleInput" placeholder="Observación (opcional)">
+          </div>
+
+          <!--Tercera Pregunta-->
+          <div>
+            <label for="formGroupExampleInput">3 ¿Cuál es el nivel de habilidad de cada tipo de usuario?</label>
+          </div>
+
+          <div class="custom-control custom-radio">
+            <input type="radio" id="customRadio31" name="pre3" class="form-check-input" value="option1"> 
+            <label class="form-check-label" for="customRadio31">inicial</label>
+          </div>
+          <div class="custom-control custom-radio">
+            <input type="radio" id="customRadio32" name="pre3" class="form-check-input" value="option2">
+            <label class="form-check-label" for="customRadio32">intermedio</label>
+          </div>
+          <div class="custom-control custom-radio">
+            <input type="radio" id="customRadio33" name="pre3" class="form-check-input" value="option3">
+            <label class="form-check-label" for="customRadio33">avanzado</label>
+          </div>
+
+          <div>
+            <input name="pre3Obs" type="text" class="form-control" id="formGroupExampleInput" placeholder="Observación (opcional)">
+          </div>
+
+          <!--Cuarta Pregunta-->
+          <div>
+            <label for="formGroupExampleInput">4 ¿Qué clase de entrenamiento requerirá cada tipo de usuario?</label>
+          </div>
+
+          <div class="custom-control custom-switch">
+            <div class="form-row">
+              <div class="form-group col-md-3">
+                <input type="checkbox" name="pre4" class="custom-control-input" id="customSwitch4">
+                <label class="custom-control-label" for="customSwitch4">A considerar</label>
+              </div>
+              <div class="col">
+                <input type="text" name="pre4Obs" class="form-control" placeholder="Observación (opcional)">
+              </div>
+            </div>
+          </div>
+
+
+
+          <!--Quinta Pregunta-->
+          <div>
+            <label for="formGroupExampleInput">5 ¿Cuán fácil le será al usuario comprender y utilizar el
+              sistema?</label>
+          </div>
+
+          <div class="custom-control custom-switch">
+            <div class="form-row">
+              <div class="form-group col-md-3">
+                <input type="checkbox" name="pre5" class="custom-control-input" id="customSwitch5">
+                <label class="custom-control-label" for="customSwitch5">Tiene Conocimientos</label>
+              </div>
+              <div class="col">
+                <input type="text" name="pre5Obs" class="form-control" placeholder="Observación (opcional)">
+              </div>
+            </div>
+          </div>
+
+
+
+          <!--Sexta Pregunta-->
+          <div>
+            <label for="formGroupExampleInput">6 ¿Cuán difícil le resultará al usuario hacer uso indebido del
+              sistema?</label>
+          </div>
+
+                <div class="custom-control custom-switch">
+            <div class="form-row">
+              <div class="form-group col-md-3">
+                <input type="checkbox" name="pre6" class="custom-control-input" id="customSwitch6">
+                <label class="custom-control-label" for="customSwitch6">Es mileniam</label>
+              </div>
+              <div class="col">
+                <input type="text" name="pre6Obs" class="form-control" placeholder="Observación (opcional)">
+              </div>
+            </div>
+          </div>
+
+
         </div>
-        <div class="form-check form-check-inline">
-          <input name="pre6" class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio1" value="option1">
-          <label class="form-check-label" for="inlineRadio1">poco</label>
-        </div>
-        <div class="form-check form-check-inline">
-          <input name="pre6" class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio2" value="option2">
-          <label class="form-check-label" for="inlineRadio2">algo</label>
-        </div>
-        <div class="form-check form-check-inline">
-          <input name="pre6" class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio3" value="option3">
-          <label class="form-check-label" for="inlineRadio3">arto</label>
-        </div>
-</div>
 
         <!--7 Pregunta-->
         <input class="form-control" type="text" placeholder="Funcionalidad" readonly>
@@ -142,15 +161,18 @@
             sistema?</label>
         </div>
         <div class="form-check form-check-inline">
-          <input name="pre9" class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio1" value="option1">
+          <input name="pre9" class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio1"
+            value="option1">
           <label class="form-check-label" for="inlineRadio1">usuario</label>
         </div>
         <div class="form-check form-check-inline">
-          <input name="pre9" class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio2" value="option2">
+          <input name="pre9" class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio2"
+            value="option2">
           <label class="form-check-label" for="inlineRadio2">usuario - admin</label>
         </div>
         <div class="form-check form-check-inline">
-          <input name="pre9" class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio3" value="option3">
+          <input name="pre9" class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio3"
+            value="option3">
           <label class="form-check-label" for="inlineRadio3">usuario - admin - cliente</label>
         </div>
 
@@ -166,15 +188,18 @@
             o rendimiento?</label>
         </div>
         <div class="form-check form-check-inline">
-          <input name="pre11" class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio1" value="option1">
+          <input name="pre11" class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio1"
+            value="option1">
           <label class="form-check-label" for="inlineRadio1">si</label>
         </div>
         <div class="form-check form-check-inline">
-          <input name="pre11" class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio2" value="option2">
+          <input name="pre11" class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio2"
+            value="option2">
           <label class="form-check-label" for="inlineRadio2">no</label>
         </div>
         <div class="form-check form-check-inline">
-          <input name="pre11" class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio3" value="option3">
+          <input name="pre11" class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio3"
+            value="option3">
           <label class="form-check-label" for="inlineRadio3">usuario - admin - cliente</label>
         </div>
 
@@ -203,15 +228,18 @@
           <label for="formGroupExampleInput">13 ¿Cuán a menudo serán recibidos o enviados?</label>
         </div>
         <div class="form-check form-check-inline">
-          <input name="pre13" class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio1" value="option1">
+          <input name="pre13" class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio1"
+            value="option1">
           <label class="form-check-label" for="inlineRadio1">0-50</label>
         </div>
         <div class="form-check form-check-inline">
-          <input name="pre14" class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio2" value="option2">
+          <input name="pre14" class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio2"
+            value="option2">
           <label class="form-check-label" for="inlineRadio2">50-100</label>
         </div>
         <div class="form-check form-check-inline">
-          <input name="pre13" class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio3" value="option3">
+          <input name="pre13" class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio3"
+            value="option3">
           <label class="form-check-label" for="inlineRadio3">100+</label>
         </div>
 
@@ -220,15 +248,18 @@
           <label for="formGroupExampleInput">14 ¿Cuán exactos deben ser?</label>
         </div>
         <div class="form-check form-check-inline">
-          <input name="pre14" class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio1" value="option1">
+          <input name="pre14" class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio1"
+            value="option1">
           <label class="form-check-label" for="inlineRadio1">redondeo arriba</label>
         </div>
         <div class="form-check form-check-inline">
-          <input name="pre14" class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio2" value="option2">
+          <input name="pre14" class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio2"
+            value="option2">
           <label class="form-check-label" for="inlineRadio2">redondeo abajo</label>
         </div>
         <div class="form-check form-check-inline">
-          <input name="pre14" class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio3" value="option3">
+          <input name="pre14" class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio3"
+            value="option3">
           <label class="form-check-label" for="inlineRadio3">100+</label>
         </div>
 
@@ -237,15 +268,18 @@
           <label for="formGroupExampleInput">15 ¿Con qué grado de precisión deben hacerse los cálculos?</label>
         </div>
         <div class="form-check form-check-inline">
-          <input name="pre15" class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio1" value="option1">
+          <input name="pre15" class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio1"
+            value="option1">
           <label class="form-check-label" for="inlineRadio1">Entero</label>
         </div>
         <div class="form-check form-check-inline">
-          <input name="pre15" class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio2" value="option2">
+          <input name="pre15" class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio2"
+            value="option2">
           <label class="form-check-label" for="inlineRadio2">2 decimales</label>
         </div>
         <div class="form-check form-check-inline">
-          <input name="pre15" class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio3" value="option3">
+          <input name="pre15" class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio3"
+            value="option3">
           <label class="form-check-label" for="inlineRadio3">4+</label>
         </div>
 
@@ -254,15 +288,18 @@
           <label for="formGroupExampleInput">16 ¿Cuántos datos fluyen a través del sistema?</label>
         </div>
         <div class="form-check form-check-inline">
-          <input name="pre16" class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio1" value="option1">
+          <input name="pre16" class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio1"
+            value="option1">
           <label class="form-check-label" for="inlineRadio1">200 productos</label>
         </div>
         <div class="form-check form-check-inline">
-          <input name="pre16" class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio2" value="option2">
+          <input name="pre16" class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio2"
+            value="option2">
           <label class="form-check-label" for="inlineRadio2">500 productos</label>
         </div>
         <div class="form-check form-check-inline">
-          <input name="pre16" class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio3" value="option3">
+          <input name="pre16" class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio3"
+            value="option3">
           <label class="form-check-label" for="inlineRadio3">1000+ productos</label>
         </div>
 
@@ -272,15 +309,18 @@
           <label for="formGroupExampleInput">17 ¿Debe retenerse algún dato por algún período de tiempo?</label>
         </div>
         <div class="form-check form-check-inline">
-          <input name="pre17" class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio1" value="option1">
+          <input name="pre17" class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio1"
+            value="option1">
           <label class="form-check-label" for="inlineRadio1">Almacenamiento</label>
         </div>
         <div class="form-check form-check-inline">
-          <input name="pre17" class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio2" value="option2">
+          <input name="pre17" class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio2"
+            value="option2">
           <label class="form-check-label" for="inlineRadio2">Almacenamiento y recibo</label>
         </div>
         <div class="form-check form-check-inline">
-          <input name="pre17" class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio3" value="option3">
+          <input name="pre17" class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio3"
+            value="option3">
           <label class="form-check-label" for="inlineRadio3">Sólo recibo</label>
         </div>
 
@@ -328,15 +368,18 @@
           <label for="formGroupExampleInput">20 ¿Cuánto espacio físico será ocupado por el sistema?</label>
         </div>
         <div class="form-check form-check-inline">
-          <input name="pre20" class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio1" value="option1">
+          <input name="pre20" class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio1"
+            value="option1">
           <label class="form-check-label" for="inlineRadio1">Mesa</label>
         </div>
         <div class="form-check form-check-inline">
-          <input name="pre20" class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio2" value="option2">
+          <input name="pre20" class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio2"
+            value="option2">
           <label class="form-check-label" for="inlineRadio2">parte del mostrado</label>
         </div>
         <div class="form-check form-check-inline">
-          <input name="pre20" class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio3" value="option3">
+          <input name="pre20" class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio3"
+            value="option3">
           <label class="form-check-label" for="inlineRadio3">mueble</label>
         </div>
 
@@ -364,15 +407,18 @@
           <label for="formGroupExampleInput">22 ¿Existe un cronograma prescrito para el desarrollo?</label>
         </div>
         <div class="form-check form-check-inline">
-          <input name="pre22" class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio1" value="option1">
+          <input name="pre22" class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio1"
+            value="option1">
           <label class="form-check-label" for="inlineRadio1">Nose dio Fecha limite</label>
         </div>
         <div class="form-check form-check-inline">
-          <input name="pre22" name="pre21" class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio2" value="option2">
+          <input name="pre22" name="pre21" class="form-check-input" type="radio" name="inlineRadioOptions"
+            id="inlineRadio2" value="option2">
           <label class="form-check-label" for="inlineRadio2">Fecha limite del curso</label>
         </div>
         <div class="form-check form-check-inline">
-          <input name="pre22" class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio3" value="option3">
+          <input name="pre22" class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio3"
+            value="option3">
           <label class="form-check-label" for="inlineRadio3">Ajustado al alcance</label>
         </div>
 
@@ -383,15 +429,18 @@
             o en hardware y software?</label>
         </div>
         <div class="form-check form-check-inline">
-          <input name="pre23" class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio1" value="option1">
+          <input name="pre23" class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio1"
+            value="option1">
           <label class="form-check-label" for="inlineRadio1">No hay precio</label>
         </div>
         <div class="form-check form-check-inline">
-          <input name="pre23" class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio2" value="option2">
+          <input name="pre23" class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio2"
+            value="option2">
           <label class="form-check-label" for="inlineRadio2">Precio deacuerdo a lo que usa</label>
         </div>
         <div class="form-check form-check-inline">
-          <input name="pre23" class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio3" value="option3">
+          <input name="pre23" class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio3"
+            value="option3">
           <label class="form-check-label" for="inlineRadio3">Por cantidad de modulos</label>
         </div>
 
@@ -402,15 +451,18 @@
           <label for="formGroupExampleInput">24 ¿Dónde esta el equipo que el sistema necesita para funcionar?</label>
         </div>
         <div class="form-check form-check-inline">
-          <input name="pre24" class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio1" value="option1">
+          <input name="pre24" class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio1"
+            value="option1">
           <label class="form-check-label" for="inlineRadio1">Cerca al negocio</label>
         </div>
         <div class="form-check form-check-inline">
-          <input name="pre24" class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio2" value="option2">
+          <input name="pre24" class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio2"
+            value="option2">
           <label class="form-check-label" for="inlineRadio2">Lugar distinto</label>
         </div>
         <div class="form-check form-check-inline">
-          <input name="pre24" class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio3" value="option3">
+          <input name="pre24" class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio3"
+            value="option3">
           <label class="form-check-label" for="inlineRadio3">Cerca al gerente</label>
         </div>
 
@@ -420,15 +472,18 @@
           <label for="formGroupExampleInput">25 ¿Existe una localización o varias?</label>
         </div>
         <div class="form-check form-check-inline">
-          <input name="pre25" class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio1" value="option1">
+          <input name="pre25" class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio1"
+            value="option1">
           <label class="form-check-label" for="inlineRadio1">1-2</label>
         </div>
         <div class="form-check form-check-inline">
-          <input name="pre25" class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio2" value="option2">
+          <input name="pre25" class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio2"
+            value="option2">
           <label class="form-check-label" for="inlineRadio2">3-5</label>
         </div>
         <div class="form-check form-check-inline">
-          <input name="pre25" class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio3" value="option3">
+          <input name="pre25" class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio3"
+            value="option3">
           <label class="form-check-label" for="inlineRadio3">+5</label>
         </div>
 
@@ -458,15 +513,18 @@
           <label for="formGroupExampleInput">27 ¿La entrada proviene de uno o más sistemas?</label>
         </div>
         <div class="form-check form-check-inline">
-          <input name="pre27" class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio1" value="option1">
+          <input name="pre27" class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio1"
+            value="option1">
           <label class="form-check-label" for="inlineRadio1">1-2</label>
         </div>
         <div class="form-check form-check-inline">
-          <input name="pre27" class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio2" value="option2">
+          <input name="pre27" class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio2"
+            value="option2">
           <label class="form-check-label" for="inlineRadio2">3-5</label>
         </div>
         <div class="form-check form-check-inline">
-          <input name="pre27" class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio3" value="option3">
+          <input name="pre27" class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio3"
+            value="option3">
           <label class="form-check-label" for="inlineRadio3">+5</label>
         </div>
 
@@ -477,15 +535,18 @@
           <label for="formGroupExampleInput">28 ¿La salida va a uno o más sistemas?</label>
         </div>
         <div class="form-check form-check-inline">
-          <input name="pre28" class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio1" value="option1">
+          <input name="pre28" class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio1"
+            value="option1">
           <label class="form-check-label" for="inlineRadio1">sistema unico</label>
         </div>
         <div class="form-check form-check-inline">
-          <input name="pre28" class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio2" value="option2">
+          <input name="pre28" class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio2"
+            value="option2">
           <label class="form-check-label" for="inlineRadio2">Sistema dual</label>
         </div>
         <div class="form-check form-check-inline">
-          <input name="pre28" class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio3" value="option3">
+          <input name="pre28" class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio3"
+            value="option3">
           <label class="form-check-label" for="inlineRadio3">mas 3</label>
         </div>
 
@@ -496,15 +557,18 @@
             datos?</label>
         </div>
         <div class="form-check form-check-inline">
-          <input name="pre29" class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio1" value="option1">
+          <input name="pre29" class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio1"
+            value="option1">
           <label class="form-check-label" for="inlineRadio1">Cuadro</label>
         </div>
         <div class="form-check form-check-inline">
-          <input name="pre29" class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio2" value="option2">
+          <input name="pre29" class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio2"
+            value="option2">
           <label class="form-check-label" for="inlineRadio2">Recibo</label>
         </div>
         <div class="form-check form-check-inline">
-          <input name="pre29" class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio3" value="option3">
+          <input name="pre29" class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio3"
+            value="option3">
           <label class="form-check-label" for="inlineRadio3">txt</label>
         </div>
 
@@ -562,15 +626,18 @@
           <label for="formGroupExampleInput">32 ¿La salida va a uno o más sistemas?</label>
         </div>
         <div class="form-check form-check-inline">
-          <input name="pre32" class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio1" value="option1">
+          <input name="pre32" class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio1"
+            value="option1">
           <label class="form-check-label" for="inlineRadio1">Mostrar los errores</label>
         </div>
         <div class="form-check form-check-inline">
-          <input name="pre32" class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio2" value="option2">
+          <input name="pre32" class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio2"
+            value="option2">
           <label class="form-check-label" for="inlineRadio2">Capturar errores</label>
         </div>
         <div class="form-check form-check-inline">
-          <input name="pre32" class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio3" value="option3">
+          <input name="pre32" class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio3"
+            value="option3">
           <label class="form-check-label" for="inlineRadio3">mostrar y capturar los errores</label>
         </div>
 
@@ -580,15 +647,18 @@
           <label for="formGroupExampleInput">33 ¿Cuál es el promedio de tiempo prescrito entre fallas?</label>
         </div>
         <div class="form-check form-check-inline">
-          <input name="pre33" class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio1" value="option1">
+          <input name="pre33" class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio1"
+            value="option1">
           <label class="form-check-label" for="inlineRadio1">1-2 segundos</label>
         </div>
         <div class="form-check form-check-inline">
-          <input name="pre33" class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio2" value="option2">
+          <input name="pre33" class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio2"
+            value="option2">
           <label class="form-check-label" for="inlineRadio2">3-4 segundos</label>
         </div>
         <div class="form-check form-check-inline">
-          <input name="pre33" class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio3" value="option3">
+          <input name="pre33" class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio3"
+            value="option3">
           <label class="form-check-label" for="inlineRadio3">5-6 segundos</label>
         </div>
 
@@ -599,15 +669,18 @@
             después de una falla?</label>
         </div>
         <div class="form-check form-check-inline">
-          <input name="pre34" class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio1" value="option1">
+          <input name="pre34" class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio1"
+            value="option1">
           <label class="form-check-label" for="inlineRadio1">1-2 segundos</label>
         </div>
         <div class="form-check form-check-inline">
-          <input name="pre34" class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio2" value="option2">
+          <input name="pre34" class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio2"
+            value="option2">
           <label class="form-check-label" for="inlineRadio2">3-4 segundos</label>
         </div>
         <div class="form-check form-check-inline">
-          <input name="pre34" class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio3" value="option3">
+          <input name="pre34" class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio3"
+            value="option3">
           <label class="form-check-label" for="inlineRadio3">5-6 segundos</label>
         </div>
 
@@ -618,15 +691,18 @@
             mejoramiento del sistema?</label>
         </div>
         <div class="form-check form-check-inline">
-          <input name="pre35" class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio1" value="option1">
+          <input name="pre35" class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio1"
+            value="option1">
           <label class="form-check-label" for="inlineRadio1">Luego de 1 mes de dejarlo funcionando</label>
         </div>
         <div class="form-check form-check-inline">
-          <input name="pre35" class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio2" value="option2">
+          <input name="pre35" class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio2"
+            value="option2">
           <label class="form-check-label" for="inlineRadio2">Luego de 1 año</label>
         </div>
         <div class="form-check form-check-inline">
-          <input name="pre35" class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio3" value="option3">
+          <input name="pre35" class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio3"
+            value="option3">
           <label class="form-check-label" for="inlineRadio3">A la semana</label>
         </div>
 
@@ -637,15 +713,18 @@
             de respuesta?</label>
         </div>
         <div class="form-check form-check-inline">
-          <input name="pre36" class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio1" value="option1">
+          <input name="pre36" class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio1"
+            value="option1">
           <label class="form-check-label" for="inlineRadio1">Busqueda mejorada</label>
         </div>
         <div class="form-check form-check-inline">
-          <input name="pre36" class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio2" value="option2">
+          <input name="pre36" class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio2"
+            value="option2">
           <label class="form-check-label" for="inlineRadio2">Almacenamiento mejorado</label>
         </div>
         <div class="form-check form-check-inline">
-          <input name="pre36" class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio3" value="option3">
+          <input name="pre36" class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio3"
+            value="option3">
           <label class="form-check-label" for="inlineRadio3">Costo reducido</label>
         </div>
 
@@ -656,15 +735,18 @@
             de computadora a otro?</label>
         </div>
         <div class="form-check form-check-inline">
-          <input name="pre37" class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio1" value="option1">
+          <input name="pre37" class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio1"
+            value="option1">
           <label class="form-check-label" for="inlineRadio1">Lugar fijo</label>
         </div>
         <div class="form-check form-check-inline">
-          <input name="pre37" class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio2" value="option2">
+          <input name="pre37" class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio2"
+            value="option2">
           <label class="form-check-label" for="inlineRadio2">Fácil de mover</label>
         </div>
         <div class="form-check form-check-inline">
-          <input name="pre37" class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio3" value="option3">
+          <input name="pre37" class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio3"
+            value="option3">
           <label class="form-check-label" for="inlineRadio3">Costo reducido</label>
         </div>
 
@@ -678,15 +760,18 @@
             de computadora a otro?</label>
         </div>
         <div class="form-check form-check-inline">
-          <input name="pre38" class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio1" value="option1">
+          <input name="pre38" class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio1"
+            value="option1">
           <label class="form-check-label" for="inlineRadio1">Login</label>
         </div>
         <div class="form-check form-check-inline">
-          <input name="pre38" class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio2" value="option2">
+          <input name="pre38" class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio2"
+            value="option2">
           <label class="form-check-label" for="inlineRadio2">Huella dactilar</label>
         </div>
         <div class="form-check form-check-inline">
-          <input name="pre38" class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio3" value="option3">
+          <input name="pre38" class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio3"
+            value="option3">
           <label class="form-check-label" for="inlineRadio3">Clave de ingreso</label>
         </div>
 
@@ -696,15 +781,18 @@
           <label for="formGroupExampleInput">39 ¿Debe controlarse el acceso al sistema o a la información?</label>
         </div>
         <div class="form-check form-check-inline">
-          <input name="pre39" class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio1" value="option1">
+          <input name="pre39" class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio1"
+            value="option1">
           <label class="form-check-label" for="inlineRadio1">JSON</label>
         </div>
         <div class="form-check form-check-inline">
-          <input name="pre39" class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio2" value="option2">
+          <input name="pre39" class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio2"
+            value="option2">
           <label class="form-check-label" for="inlineRadio2">text</label>
         </div>
         <div class="form-check form-check-inline">
-          <input name="pre39" class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio3" value="option3">
+          <input name="pre39" class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio3"
+            value="option3">
           <label class="form-check-label" for="inlineRadio3">base de datos</label>
         </div>
 
@@ -716,15 +804,18 @@
             del sistema operativo?</label>
         </div>
         <div class="form-check form-check-inline">
-          <input name="pre40" class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio1" value="option1">
+          <input name="pre40" class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio1"
+            value="option1">
           <label class="form-check-label" for="inlineRadio1">misma computadora</label>
         </div>
         <div class="form-check form-check-inline">
-          <input name="pre40" class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio2" value="option2">
+          <input name="pre40" class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio2"
+            value="option2">
           <label class="form-check-label" for="inlineRadio2">portable</label>
         </div>
         <div class="form-check form-check-inline">
-          <input name="pre40" class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio3" value="option3">
+          <input name="pre40" class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio3"
+            value="option3">
           <label class="form-check-label" for="inlineRadio3">requiere instalarse</label>
         </div>
 
@@ -734,15 +825,18 @@
           <label for="formGroupExampleInput">41 ¿Con qué frecuencia deben hacerse copias de respaldo?</label>
         </div>
         <div class="form-check form-check-inline">
-          <input name="pre41" class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio1" value="option1">
+          <input name="pre41" class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio1"
+            value="option1">
           <label class="form-check-label" for="inlineRadio1">diario</label>
         </div>
         <div class="form-check form-check-inline">
-          <input name="pre41" class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio2" value="option2">
+          <input name="pre41" class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio2"
+            value="option2">
           <label class="form-check-label" for="inlineRadio2">semanal</label>
         </div>
         <div class="form-check form-check-inline">
-          <input name="pre41" class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio3" value="option3">
+          <input name="pre41" class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio3"
+            value="option3">
           <label class="form-check-label" for="inlineRadio3">mes</label>
         </div>
 
@@ -752,15 +846,18 @@
           <label for="formGroupExampleInput">42 ¿Las copias de respaldo deben almacenarse en un lugar diferente?</label>
         </div>
         <div class="form-check form-check-inline">
-          <input name="pre42" class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio1" value="option1">
+          <input name="pre42" class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio1"
+            value="option1">
           <label class="form-check-label" for="inlineRadio1">si drive</label>
         </div>
         <div class="form-check form-check-inline">
-          <input name="pre42" class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio2" value="option2">
+          <input name="pre42" class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio2"
+            value="option2">
           <label class="form-check-label" for="inlineRadio2">no local</label>
         </div>
         <div class="form-check form-check-inline">
-          <input name="pre42" class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio3" value="option3">
+          <input name="pre42" class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio3"
+            value="option3">
           <label class="form-check-label" for="inlineRadio3">si texto</label>
         </div>
 
@@ -771,15 +868,18 @@
             o el robo?</label>
         </div>
         <div class="form-check form-check-inline">
-          <input name="pre43" class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio1" value="option1">
+          <input name="pre43" class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio1"
+            value="option1">
           <label class="form-check-label" for="inlineRadio1">si</label>
         </div>
         <div class="form-check form-check-inline">
-          <input name="pre43" class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio2" value="option2">
+          <input name="pre43" class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio2"
+            value="option2">
           <label class="form-check-label" for="inlineRadio2">no</label>
         </div>
         <div class="form-check form-check-inline">
-          <input name="pre43" class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio3" value="option3">
+          <input name="pre43" class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio3"
+            value="option3">
           <label class="form-check-label" for="inlineRadio3">si texto</label>
         </div>
 
@@ -794,7 +894,7 @@
           <button type="submit" id="button" class="btn btn-primary">Capturar</button>
         </div>
         <br><br><br><br><br><br>
-        
+
       </form>
     </div>
   </div>
@@ -813,8 +913,6 @@
       arrayResultados.push(temp)
 
       // console.log(temp)
-
-
 
       // enviar el arreglo al server por post
     });

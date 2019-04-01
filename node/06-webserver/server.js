@@ -14,13 +14,11 @@ app.use(bodyParser.urlencoded({ extended: false }));
 
 //Express HBS engine
 hbs.registerPartials(__dirname + '/views/parciales');
-var path = require('path');
-var mime = require('mime');
 
 const fs = require('fs');
 var PDFDocument = require('pdfkit');
-const blobStream = require('./hbs/blob-stream');
-var doc = new PDFDocument;
+
+
 
 
 
@@ -31,20 +29,22 @@ app.set('view engine', 'hbs');
 
 app.get('/', (req, res) => {
     //res.send('Hola Mundo');
-
+    //res.render('home');
     res.render('home', {
         nombre: 'Fernando'
     });
 
 });
 //usando body asd
-app.post('/pdf', (req, res) => {
-    var resp1 = '1 ¿Quien usará el sistema? ' + req.body.pre1;
-    var resp2 = '2 ¿Habrá varios tipos de usuario? ' + req.body.pre2;
-    var resp3 = '3 ¿Cuál es el nivel de habilidad de cada tipo de usuario? ' + req.body.pre3;
-    var resp4 = '4 ¿Qué clase de entrenamiento requerirá cada tipo de usuario? ' + req.body.pre4;
-    var resp5 = '5 ¿Cuán fácil le será al usuario comprender y utilizar el sistema? ' + req.body.pre5;
-    var resp6 = '6 ¿Cuán difícil le resultará al usuario hacer uso indebido del sistema? ' + req.body.pre6;
+app.post('/', (req, res) => {
+    var doc = new PDFDocument;
+
+    var resp1 = '1 ¿Quien usará el sistema? ';
+    var resp2 = '2 ¿Habrá varios tipos de usuario? ';
+    var resp3 = '3 ¿Cuál es el nivel de habilidad de cada tipo de usuario? ';
+    var resp4 = '4 ¿Qué clase de entrenamiento requerirá cada tipo de usuario? ';
+    var resp5 = '5 ¿Cuán fácil le será al usuario comprender y utilizar el sistema? ';
+    var resp6 = '6 ¿Cuán difícil le resultará al usuario hacer uso indebido del sistema? ';
     var resp7 = '7 ¿Qué hará el sistema? ' + req.body.pre7;
     var resp8 = '8 ¿Cuándo lo hará?: ' + req.body.pre8;
     var resp9 = '9 ¿Cuán difícil le resultará al usuario hacer uso indebido del sistema? ' + req.body.pre9;
@@ -83,41 +83,202 @@ app.post('/pdf', (req, res) => {
     var resp42 = '42 ¿Las copias de respaldo deben almacenarse en un lugar diferente? ' + req.body.pre42;
     var resp43 = '43 ¿Deben tomarse precauciones contra el fuego, el daño provocado por agua o el robo? ' + req.body.pre43;
 
-    //var stream = doc.pipe(blobStream());
-    doc.pipe(fs.createWriteStream('Requerimientos.pdf'));
 
-    // Establecemos un titulo y le pasamos las coordenadas X y Y.
+    doc.pipe(fs.createWriteStream('Requerimientos.pdf').on('finish', function() {
+        console.log('Archivo creado satisfactoriamente ....')
+        var file = fs.createReadStream('Requerimientos.pdf');
+        var stat = fs.statSync('Requerimientos.pdf');
+        res.setHeader('Content-Length', stat.size);
+        res.setHeader('Content-Type', 'application/pdf');
+        res.setHeader('Content-Disposition', 'attachment; filename=Requerimientos.pdf');
+        file.pipe(res);
+
+
+
+    }));
+
+    //Establecemos un titulo y le pasamos las coordenadas X y Y.
 
     doc.fontSize(15).text('Requerimientos', 50, 50);
     doc.text('Usuarios y Factores Humanos', {
+        font: 'Times-Bold',
         width: 410, // anchura en px
         align: 'left' // tipo de alineación (left, center, right o justify)
     });
-    // Establecemos la anchura y el tipo de alineación de nuestros parrafos.
+
+
+    doc.lineCap('butt')
+        .moveTo(400, 90)
+        .lineTo(400, 230)
+        .stroke()
+
+    row(doc, 90);
+    row(doc, 110);
+    row(doc, 130);
+    row(doc, 150);
+    row(doc, 170);
+    row(doc, 190);
+    row(doc, 210);
+
+    textInRowFirst(doc, 'Nombre o razón social', 95);
+    textInRowFirst(doc, 'RUT', 115);
+    textInRowFirst(doc, 'Dirección', 135);
+    textInRowFirst(doc, 'Comuna', 155);
+    textInRowFirst(doc, 'Ciudad', 175);
+    textInRowFirst(doc, 'Telefono', 195);
+    textInRowFirst(doc, 'e-mail', 215);
+
+    function textInRowFirst(doc, text, heigth) {
+        doc.y = heigth;
+        doc.x = 30;
+        doc.fillColor('black')
+        doc.text(text, {
+            paragraphGap: 5,
+            indent: 5,
+            align: 'justify',
+            columns: 1,
+        });
+        return doc
+    }
+
+
+    function row(doc, heigth) {
+        doc.lineJoin('miter')
+            .rect(30, heigth, 500, 20)
+            .stroke()
+        return doc
+    }
+
+
+
+
+
+
+    //Establecemos la anchura y el tipo de alineación de nuestros parrafos.
     doc.text(resp1, {
         width: 410, // anchura en px
         align: 'left' // tipo de alineación (left, center, right o justify)
     });
+    doc.font('Times-Bold')
+        .text(req.body.pre1)
+        .font('Helvetica');
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
     doc.text(resp2, {
-        width: 410, // anchura en px
         align: 'left' // tipo de alineación (left, center, right o justify)
     });
+    switch (req.body.pre2) {
+        case 'option1':
+            doc.font('Times-Bold')
+                .text('1-2 Personas')
+                .font('Helvetica');
+            doc.text('Observación: ' + req.body.pre2Obs);
+            break;
+        case 'option2':
+            doc.font('Times-Bold')
+                .text('3-4 Personas')
+                .font('Helvetica');
+            doc.text('Observación: ' + req.body.pre2Obs);
+            break;
+        case 'option3':
+            doc.font('Times-Bold')
+                .text('5-6 Personas')
+                .font('Helvetica');
+            doc.text('Observación: ' + req.body.pre2Obs);
+            break;
+        default:
+            break;
+    }
+
+
     doc.text(resp3, {
-        width: 410, // anchura en px
         align: 'left' // tipo de alineación (left, center, right o justify)
     });
+    switch (req.body.pre3) {
+        case 'option1':
+            doc.font('Times-Bold')
+                .text('inicial')
+                .font('Helvetica');
+            doc.text('Observación: ' + req.body.pre3Obs);
+            break;
+        case 'option2':
+            doc.font('Times-Bold')
+                .text('intermedio')
+                .font('Helvetica');
+            doc.text('Observación: ' + req.body.pre3Obs);
+            break;
+        case 'option3':
+            doc.font('Times-Bold')
+                .text('avanzado')
+                .font('Helvetica');
+            doc.text('Observación: ' + req.body.pre3Obs);
+            break;
+        default:
+            break;
+    }
+
     doc.text(resp4, {
-        width: 410, // anchura en px
+        //width: 410, // anchura en px
         align: 'left' // tipo de alineación (left, center, right o justify)
     });
+    if (req.body.pre4 == 'on') {
+        doc.font('Times-Bold')
+            .text('A considerar')
+            .font('Helvetica');
+        doc.text('Observación: ' + req.body.pre4Obs);
+    } else {
+        doc.font('Times-Bold')
+            .text('No considerar')
+            .font('Helvetica');
+        doc.text('Observación: ' + req.body.pre4Obs);
+    }
+
     doc.text(resp5, {
-        width: 410, // anchura en px
+        //width: 410, // anchura en px
         align: 'left' // tipo de alineación (left, center, right o justify)
     });
+    if (req.body.pre5 == 'on') {
+        doc.font('Times-Bold')
+            .text('Tiene Conocimientos')
+            .font('Helvetica');
+        doc.text('Observación: ' + req.body.pre5Obs);
+    } else {
+        doc.font('Times-Bold')
+            .text('No tiene Conocimientos')
+            .font('Helvetica');
+        doc.text('Observación: ' + req.body.pre5Obs);
+    }
+
     doc.text(resp6, {
-        width: 410, // anchura en px
+        //width: 410, // anchura en px
         align: 'left' // tipo de alineación (left, center, right o justify)
     });
+    if (req.body.pre6 == 'on') {
+        doc.font('Times-Bold')
+            .text('Es mileniam')
+            .font('Helvetica');
+        doc.text('Observación: ' + req.body.pre6Obs);
+    } else {
+        doc.font('Times-Bold')
+            .text('No es mileniam')
+            .font('Helvetica');
+        doc.text('Observación: ' + req.body.pre6Obs);
+    }
+
     doc.text(resp7, {
         width: 410, // anchura en px
         align: 'left' // tipo de alineación (left, center, right o justify)
@@ -267,35 +428,14 @@ app.post('/pdf', (req, res) => {
         align: 'left' // tipo de alineación (left, center, right o justify)
     });
 
-    console.log(resp1);
+
+
     doc.end();
-
-    // var data = fs.readFileSync('Requerimientos.pdf');
-    // res.contentType("application/pdf");
-    // res.send(data)
-
-    var file = __dirname + '/Requerimientos.pdf';
-
-    var filename = path.basename(file);
-    var mimetype = mime.lookup(file);
-
-    res.setHeader('Content-disposition', 'attachment; filename=' + filename);
-    res.setHeader('Content-type', mimetype);
-
-
-
-    var filestream = fs.createReadStream(file);
-    filestream.pipe(res);
-
-
-    // stream.on('finish', function() {
-    //     iframe.src = stream.toBlobURL('application/pdf');
-    // });
-
-
 
 
 });
+
+
 
 app.get('/about', (req, res) => {
     res.render('about');
