@@ -11,13 +11,13 @@
   <a class="btn btn-primary btn-lg" href="#" role="button">Learn more</a>
 </div>
 -->
+
 <div class="container">
   <div class="row">
     <div class="col">
       <form action="/" method="post">
-
         <div class="jumbotron">
-
+        <h1 >Requerimientos</h1>
 
           <input class="form-control" type="text" placeholder="Usuarios y factores humanos" readonly disabled>
           <!--Primera Pregunta-->
@@ -30,60 +30,63 @@
 
           <!--Segunda Pregunta-->
           <div>
-            <label for="formGroupExampleInput">2 ¿Habrá varios tipos de usuario?</label>
+            <label for="formGroupExampleInput2">2 ¿Habrá varios tipos de usuario?</label>
           </div>
           <div class="custom-control custom-radio">
-            <input type="radio" id="customRadio21" name="pre2" class="form-check-input" value="option1">
-            <label class="form-check-label" for="customRadio21">1-2 (dueño - asistente)</label>
+            <input type="radio" id="customRadio21" name="pre2" class="form-check-input" value="option1" checked>
+            <label class="form-check-label" for="customRadio21">Dueño (gerente)</label>
           </div>
           <div class="custom-control custom-radio">
             <input type="radio" id="customRadio22" name="pre2" class="form-check-input" value="option2">
-            <label class="form-check-label" for="customRadio22">2-4 (trabajadores -cargo)</label>
+            <label class="form-check-label" for="customRadio22">Dueño - Vendedores </label>
           </div>
           <div class="custom-control custom-radio">
             <input type="radio" id="customRadio23" name="pre2" class="form-check-input" value="option3">
-            <label class="form-check-label" for="customRadio23">+4</label>
+            <label class="form-check-label" for="customRadio23">Dueño - Vendendores - Otro cargo</label>
           </div>
 
           <div>
-            <input name="pre2Obs" type="text" class="form-control" id="formGroupExampleInput" placeholder="Observación (opcional)">
+            <input name="pre2Obs" type="text" class="form-control" id="formGroupExampleInput2"
+              placeholder="Observación (opcional)">
           </div>
 
           <!--Tercera Pregunta-->
           <div>
-            <label for="formGroupExampleInput">3 ¿Cuál es el nivel de habilidad de cada tipo de usuario?</label>
+            <label for="formGroupExampleInput3">3 ¿Cuál es el nivel de habilidad de cada tipo de usuario?</label>
           </div>
 
           <div class="custom-control custom-radio">
-            <input type="radio" id="customRadio31" name="pre3" class="form-check-input" value="option1"> 
-            <label class="form-check-label" for="customRadio31">inicial</label>
+            <input type="radio" id="customRadio31" name="pre3" class="form-check-input" value="option1" checked>
+            <label class="form-check-label" for="customRadio31">Inicial</label>
           </div>
           <div class="custom-control custom-radio">
             <input type="radio" id="customRadio32" name="pre3" class="form-check-input" value="option2">
-            <label class="form-check-label" for="customRadio32">intermedio</label>
+            <label class="form-check-label" for="customRadio32">Intermedio</label>
           </div>
           <div class="custom-control custom-radio">
             <input type="radio" id="customRadio33" name="pre3" class="form-check-input" value="option3">
-            <label class="form-check-label" for="customRadio33">avanzado</label>
+            <label class="form-check-label" for="customRadio33">Avanzado</label>
           </div>
 
           <div>
-            <input name="pre3Obs" type="text" class="form-control" id="formGroupExampleInput" placeholder="Observación (opcional)">
+            <input name="pre3Obs" type="text" class="form-control" id="formGroupExampleInput3"
+              placeholder="Observación (opcional)">
           </div>
 
           <!--Cuarta Pregunta-->
           <div>
-            <label for="formGroupExampleInput">4 ¿Qué clase de entrenamiento requerirá cada tipo de usuario?</label>
+            <label for="formGroupExampleInput4">4 ¿Qué clase de entrenamiento requerirá cada tipo de usuario?</label>
           </div>
 
           <div class="custom-control custom-switch">
             <div class="form-row">
               <div class="form-group col-md-3">
                 <input type="checkbox" name="pre4" class="custom-control-input" id="customSwitch4">
-                <label class="custom-control-label" for="customSwitch4">A considerar</label>
+                <label class="custom-control-label" for="customSwitch4">Es requerido</label>
               </div>
               <div class="col">
-                <input type="text" name="pre4Obs" class="form-control" placeholder="Observación (opcional)">
+                <input type="text" name="pre4Obs" class="form-control" placeholder="¿Requiere capacitación?"
+                  id="formGroupExampleInput4">
               </div>
             </div>
           </div>
@@ -92,18 +95,19 @@
 
           <!--Quinta Pregunta-->
           <div>
-            <label for="formGroupExampleInput">5 ¿Cuán fácil le será al usuario comprender y utilizar el
+            <label for="formGroupExampleInput5">5 ¿Cuán fácil le será al usuario comprender y utilizar el
               sistema?</label>
           </div>
 
           <div class="custom-control custom-switch">
             <div class="form-row">
               <div class="form-group col-md-3">
-                <input type="checkbox" name="pre5" class="custom-control-input" id="customSwitch5">
-                <label class="custom-control-label" for="customSwitch5">Tiene Conocimientos</label>
+                <input type="checkbox" name="pre5" class="custom-control-input" id="customSwitch5" checked>
+                <label class="custom-control-label" for="customSwitch5">Fácil para el usuario</label>
               </div>
               <div class="col">
-                <input type="text" name="pre5Obs" class="form-control" placeholder="Observación (opcional)">
+                <input type="text" name="pre5Obs" class="form-control" placeholder="¿Computación basica?"
+                  id="formGroupExampleInput5">
               </div>
             </div>
           </div>
@@ -112,18 +116,19 @@
 
           <!--Sexta Pregunta-->
           <div>
-            <label for="formGroupExampleInput">6 ¿Cuán difícil le resultará al usuario hacer uso indebido del
+            <label for="formGroupExampleInput6">6 ¿Cuán difícil le resultará al usuario hacer uso indebido del
               sistema?</label>
           </div>
 
-                <div class="custom-control custom-switch">
+          <div class="custom-control custom-switch">
             <div class="form-row">
               <div class="form-group col-md-3">
                 <input type="checkbox" name="pre6" class="custom-control-input" id="customSwitch6">
-                <label class="custom-control-label" for="customSwitch6">Es mileniam</label>
+                <label class="custom-control-label" for="customSwitch6">Uso indebido</label>
               </div>
               <div class="col">
-                <input type="text" name="pre6Obs" class="form-control" placeholder="Observación (opcional)">
+                <input type="text" name="pre6Obs" class="form-control" placeholder="¿Cuenta con alguna discapacidad?"
+                  id="formGroupExampleInput6">
               </div>
             </div>
           </div>
@@ -131,760 +136,947 @@
 
         </div>
 
-        <!--7 Pregunta-->
-        <input class="form-control" type="text" placeholder="Funcionalidad" readonly>
-        <div class="form-group">
-          <label for="formGroupExampleInput">7 ¿Qué hará el sistema?</label>
-          <input name="pre7" type="text" class="form-control" id="formGroupExampleInput" placeholder="Example input">
-        </div>
+        <div class="jumbotron">
+          <!--7 Pregunta-->
+          <input class="form-control" type="text" placeholder="Funcionalidad" readonly disabled>
+          <div class="form-group">
+            <label for="formGroupExampleInput7">7 ¿Qué hará el sistema?</label>
+            <input name="pre7" type="text" class="form-control" id="formGroupExampleInput7"
+              placeholder="Requerimientos Funcionales">
+          </div>
 
-        <!--8 Pregunta-->
-        <div>
-          <label for="formGroupExampleInput">8 ¿Cuándo lo hará?</label>
-        </div>
-        <div class="form-check form-check-inline">
-          <input name="pre8" class="form-check-input" type="checkbox" id="inlineCheckbox1" value="option1">
-          <label class="form-check-label" for="inlineCheckbox1">vender</label>
-        </div>
-        <div class="form-check form-check-inline">
-          <input name="pre8" class="form-check-input" type="checkbox" id="inlineCheckbox2" value="option2">
-          <label class="form-check-label" for="inlineCheckbox2">comprar</label>
-        </div>
-        <div class="form-check form-check-inline">
-          <input name="pre8" class="form-check-input" type="checkbox" id="inlineCheckbox3" value="option3" disabled>
-          <label class="form-check-label" for="inlineCheckbox3">contabilizar (disabled)</label>
-        </div>
+          <!--8 Pregunta-->
+          <div>
+            <label for="formGroupExampleInput8">8 ¿Cuándo lo hará?</label>
+          </div>
 
-        <!--9 Pregunta-->
-        <div>
-          <label for="formGroupExampleInput">9 ¿Cuán difícil le resultará al usuario hacer uso indebido del
-            sistema?</label>
-        </div>
-        <div class="form-check form-check-inline">
-          <input name="pre9" class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio1"
-            value="option1">
-          <label class="form-check-label" for="inlineRadio1">usuario</label>
-        </div>
-        <div class="form-check form-check-inline">
-          <input name="pre9" class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio2"
-            value="option2">
-          <label class="form-check-label" for="inlineRadio2">usuario - admin</label>
-        </div>
-        <div class="form-check form-check-inline">
-          <input name="pre9" class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio3"
-            value="option3">
-          <label class="form-check-label" for="inlineRadio3">usuario - admin - cliente</label>
-        </div>
+          <div class="custom-control custom-radio">
+            <input type="radio" id="customRadio81" name="pre8" class="form-check-input" value="option1" checked>
+            <label class="form-check-label" for="customRadio81">24 horas x 7 días</label>
+          </div>
+          <div class="custom-control custom-radio">
+            <input type="radio" id="customRadio82" name="pre8" class="form-check-input" value="option2">
+            <label class="form-check-label" for="customRadio82">8 horas x 7 días</label>
+          </div>
+          <div class="custom-control custom-radio">
+            <input type="radio" id="customRadio83" name="pre8" class="form-check-input" value="option3">
+            <label class="form-check-label" for="customRadio83">8 horas x 5 días</label>
+          </div>
 
-        <!--10 Pregunta-->
-        <div class="form-group">
-          <label for="formGroupExampleInput">10 ¿Cómo y cuando puede cambiarse o mejorarse un sistema?</label>
-          <input name="pre10" type="text" class="form-control" id="formGroupExampleInput" placeholder="Example input">
-        </div>
+          <div>
+            <input name="pre8Obs" type="text" class="form-control" id="formGroupExampleInput8"
+              placeholder="¿En que momento se hara uso del sistema?">
+          </div>
 
-        <!--11 Pregunta-->
-        <div>
-          <label for="formGroupExampleInput">11 ¿Existen restricciones de la velocidad de ejecución, tiempo de respuesta
-            o rendimiento?</label>
-        </div>
-        <div class="form-check form-check-inline">
-          <input name="pre11" class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio1"
-            value="option1">
-          <label class="form-check-label" for="inlineRadio1">si</label>
-        </div>
-        <div class="form-check form-check-inline">
-          <input name="pre11" class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio2"
-            value="option2">
-          <label class="form-check-label" for="inlineRadio2">no</label>
-        </div>
-        <div class="form-check form-check-inline">
-          <input name="pre11" class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio3"
-            value="option3">
-          <label class="form-check-label" for="inlineRadio3">usuario - admin - cliente</label>
+
+
+
+          <!--9 Pregunta-->
+          <div>
+            <label for="formGroupExampleInput9">9 ¿Existen varios modos de operación?</label>
+          </div>
+          <div class="custom-control custom-radio">
+            <input type="radio" id="customRadio91" name="pre9" class="form-check-input" value="option1" checked>
+            <label class="form-check-label" for="customRadio91">Admin (root)</label>
+          </div>
+          <div class="custom-control custom-radio">
+            <input type="radio" id="customRadio92" name="pre9" class="form-check-input" value="option2">
+            <label class="form-check-label" for="customRadio92">Admin - Usuario</label>
+          </div>
+          <div class="custom-control custom-radio">
+            <input type="radio" id="customRadio93" name="pre9" class="form-check-input" value="option3">
+            <label class="form-check-label" for="customRadio93">Admin - Usuario - Cliente</label>
+          </div>
+
+          <div>
+            <input name="pre9Obs" type="text" class="form-control" id="formGroupExampleInput9"
+              placeholder="¿Requiere Login?">
+          </div>
+
+          <!--10 Pregunta-->
+          <div>
+            <label for="formGroupExampleInput10">10 ¿Cómo y cuando puede cambiarse o mejorarse un sistema?</label>
+          </div>
+
+          <div class="custom-control custom-switch">
+            <div class="form-row">
+              <div class="form-group col-md-3">
+                <input type="checkbox" name="pre10" class="custom-control-input" id="customSwitch10">
+                <label class="custom-control-label" for="customSwitch10">Si para mejoras</label>
+              </div>
+              <div class="col">
+                <input type="text" name="pre10Obs" class="form-control"
+                  placeholder="¿En un futuro desearia cambiar o mejorar el sistema?" id="formGroupExampleInput10">
+              </div>
+            </div>
+          </div>
+
+          <!--11 Pregunta-->
+          <div>
+            <label for="formGroupExampleInput11">11 ¿Existen restricciones de la velocidad de ejecución, tiempo de
+              respuesta
+              o rendimiento?</label>
+          </div>
+
+          <div class="custom-control custom-switch">
+            <div class="custom-control custom-switch">
+              <input name="pre11x1" type="checkbox" class="custom-control-input" id="customSwitch111">
+              <label class="custom-control-label" for="customSwitch111">Restricción de velocidad de ejecución</label>
+            </div>
+            <div class="custom-control custom-switch">
+              <input name="pre11x2" type="checkbox" class="custom-control-input" id="customSwitch112">
+              <label class="custom-control-label" for="customSwitch112">Restricción de tiempo de respuesta</label>
+            </div>
+            <div class="custom-control custom-switch">
+              <input name="pre11x3" type="checkbox" class="custom-control-input" id="customSwitch113">
+              <label class="custom-control-label" for="customSwitch113">Restricción en rendimiento</label>
+            </div>
+
+          </div>
+          <div>
+            <input type="text" name="pre11Obs" class="form-control" placeholder="¿Cuántas personas se acumulan?"
+              id="formGroupExampleInput11">
+          </div>
+
+
+
         </div>
 
         <!--12 Pregunta-->
-        <input class="form-control" type="text" placeholder="Datos" readonly>
+        <div class="jumbotron">
+          <input class="form-control" type="text" placeholder="Datos" readonly disabled>
+          <div>
+            <label for="formGroupExampleInput12">12 ¿Cuál será el formato de los datos, tanto para la entrada como para
+              la
+              salida?</label>
+          </div>
 
-        <div>
-          <label for="formGroupExampleInput">12 ¿Cuál será el formato de los datos, tanto para la entrada como para la
-            salida?</label>
-        </div>
-        <div class="form-check form-check-inline">
-          <input name="pre12" class="form-check-input" type="checkbox" id="inlineCheckbox1" value="option1">
-          <label class="form-check-label" for="inlineCheckbox1">Entrada entero Salida Entero</label>
-        </div>
-        <div class="form-check form-check-inline">
-          <input name="pre12" class="form-check-input" type="checkbox" id="inlineCheckbox2" value="option2">
-          <label class="form-check-label" for="inlineCheckbox2">Entrada Entero Salida Decimal</label>
-        </div>
-        <div class="form-check form-check-inline">
-          <input name="pre12" class="form-check-input" type="checkbox" id="inlineCheckbox3" value="option3" disabled>
-          <label class="form-check-label" for="inlineCheckbox3">Entrada Decimal Salida Decimal</label>
-        </div>
+          <div class="custom-control custom-switch">
+            <div class="custom-control custom-switch">
+              <input name="pre12x1" type="checkbox" class="custom-control-input" id="customSwitch1" checked>
+              <label class="custom-control-label" for="customSwitch1">Entrada por Teclado - Salida por pantalla</label>
+            </div>
+            <div class="custom-control custom-switch">
+              <input  name="pre12x2" type="checkbox" class="custom-control-input" id="customSwitch2">
+              <label class="custom-control-label" for="customSwitch2">Entrada por csv, xls - Salida por csv, xls, pdf, u
+                otro</label>
+            </div>
+            <div class="custom-control custom-switch">
+              <input name="pre12x3" type="checkbox" class="custom-control-input" id="customSwitch3">
+              <label class="custom-control-label" for="customSwitch3">Entrada por otro archivo - Salida por Nota de
+                venta</label>
+            </div>
 
-        <!--13 Pregunta-->
-        <div>
-          <label for="formGroupExampleInput">13 ¿Cuán a menudo serán recibidos o enviados?</label>
-        </div>
-        <div class="form-check form-check-inline">
-          <input name="pre13" class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio1"
-            value="option1">
-          <label class="form-check-label" for="inlineRadio1">0-50</label>
-        </div>
-        <div class="form-check form-check-inline">
-          <input name="pre14" class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio2"
-            value="option2">
-          <label class="form-check-label" for="inlineRadio2">50-100</label>
-        </div>
-        <div class="form-check form-check-inline">
-          <input name="pre13" class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio3"
-            value="option3">
-          <label class="form-check-label" for="inlineRadio3">100+</label>
-        </div>
+          </div>
 
-        <!--14 Pregunta-->
-        <div>
-          <label for="formGroupExampleInput">14 ¿Cuán exactos deben ser?</label>
-        </div>
-        <div class="form-check form-check-inline">
-          <input name="pre14" class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio1"
-            value="option1">
-          <label class="form-check-label" for="inlineRadio1">redondeo arriba</label>
-        </div>
-        <div class="form-check form-check-inline">
-          <input name="pre14" class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio2"
-            value="option2">
-          <label class="form-check-label" for="inlineRadio2">redondeo abajo</label>
-        </div>
-        <div class="form-check form-check-inline">
-          <input name="pre14" class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio3"
-            value="option3">
-          <label class="form-check-label" for="inlineRadio3">100+</label>
-        </div>
 
-        <!--15 Pregunta-->
-        <div>
-          <label for="formGroupExampleInput">15 ¿Con qué grado de precisión deben hacerse los cálculos?</label>
-        </div>
-        <div class="form-check form-check-inline">
-          <input name="pre15" class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio1"
-            value="option1">
-          <label class="form-check-label" for="inlineRadio1">Entero</label>
-        </div>
-        <div class="form-check form-check-inline">
-          <input name="pre15" class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio2"
-            value="option2">
-          <label class="form-check-label" for="inlineRadio2">2 decimales</label>
-        </div>
-        <div class="form-check form-check-inline">
-          <input name="pre15" class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio3"
-            value="option3">
-          <label class="form-check-label" for="inlineRadio3">4+</label>
-        </div>
+          <div>
+            <input name="pre12Obs" type="text" class="form-control" id="formGroupExampleInput12"
+              placeholder="Especifique otra forma">
+          </div>
 
-        <!--16 Pregunta-->
-        <div>
-          <label for="formGroupExampleInput">16 ¿Cuántos datos fluyen a través del sistema?</label>
-        </div>
-        <div class="form-check form-check-inline">
-          <input name="pre16" class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio1"
-            value="option1">
-          <label class="form-check-label" for="inlineRadio1">200 productos</label>
-        </div>
-        <div class="form-check form-check-inline">
-          <input name="pre16" class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio2"
-            value="option2">
-          <label class="form-check-label" for="inlineRadio2">500 productos</label>
-        </div>
-        <div class="form-check form-check-inline">
-          <input name="pre16" class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio3"
-            value="option3">
-          <label class="form-check-label" for="inlineRadio3">1000+ productos</label>
-        </div>
+          <!--13 Pregunta-->
+          <div>
+            <label for="formGroupExampleInput13">13 ¿Cuán a menudo serán recibidos o enviados?</label>
+          </div>
 
-        <!--17 Pregunta-->
+          <div class="custom-control custom-radio">
+            <input type="radio" id="customRadio131" name="pre13" class="form-check-input" value="option1" checked>
+            <label class="form-check-label" for="customRadio131">0 - 50 Movimientos</label>
+          </div>
+          <div class="custom-control custom-radio">
+            <input type="radio" id="customRadio132" name="pre13" class="form-check-input" value="option2">
+            <label class="form-check-label" for="customRadio132">50 - 100 Movimientos</label>
+          </div>
+          <div class="custom-control custom-radio">
+            <input type="radio" id="customRadio133" name="pre13" class="form-check-input" value="option3">
+            <label class="form-check-label" for="customRadio133">100+ Movimientos</label>
+          </div>
 
-        <div>
-          <label for="formGroupExampleInput">17 ¿Debe retenerse algún dato por algún período de tiempo?</label>
-        </div>
-        <div class="form-check form-check-inline">
-          <input name="pre17" class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio1"
-            value="option1">
-          <label class="form-check-label" for="inlineRadio1">Almacenamiento</label>
-        </div>
-        <div class="form-check form-check-inline">
-          <input name="pre17" class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio2"
-            value="option2">
-          <label class="form-check-label" for="inlineRadio2">Almacenamiento y recibo</label>
-        </div>
-        <div class="form-check form-check-inline">
-          <input name="pre17" class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio3"
-            value="option3">
-          <label class="form-check-label" for="inlineRadio3">Sólo recibo</label>
+          <div>
+            <input name="pre13Obs" type="text" class="form-control" id="formGroupExampleInput13"
+              placeholder="Aproximación: (Opcional)">
+          </div>
+
+          <!--14 Pregunta-->
+          <div>
+            <label for="formGroupExampleInput14">14 ¿Cuán exactos deben ser?</label>
+          </div>
+          <div class="custom-control custom-radio">
+            <input type="radio" id="customRadio141" name="pre14" class="form-check-input" value="option1" checked>
+            <label class="form-check-label" for="customRadio141">Sin redondeo</label>
+          </div>
+          <div class="custom-control custom-radio">
+            <input type="radio" id="customRadio142" name="pre14" class="form-check-input" value="option2">
+            <label class="form-check-label" for="customRadio142">Redondeo a la decima siguiente</label>
+          </div>
+          <div class="custom-control custom-radio">
+            <input type="radio" id="customRadio143" name="pre14" class="form-check-input" value="option3">
+            <label class="form-check-label" for="customRadio143">Redondeo a la centesima siguiente</label>
+          </div>
+
+          <div>
+            <input name="pre14Obs" type="text" class="form-control" id="formGroupExampleInput14"
+              placeholder="Observación (opcional)">
+          </div>
+
+          <!--15 Pregunta-->
+          <div>
+            <label for="formGroupExampleInput15">15 ¿Con qué grado de precisión deben hacerse los cálculos?</label>
+          </div>
+          <div class="custom-control custom-radio">
+            <input type="radio" id="customRadio151" name="pre15" class="form-check-input" value="option1" checked>
+            <label class="form-check-label" for="customRadio151">Centimos</label>
+          </div>
+          <div class="custom-control custom-radio">
+            <input type="radio" id="customRadio152" name="pre15" class="form-check-input" value="option2">
+            <label class="form-check-label" for="customRadio152">Decimales</label>
+          </div>
+          <div class="custom-control custom-radio">
+            <input type="radio" id="customRadio153" name="pre15" class="form-check-input" value="option3">
+            <label class="form-check-label" for="customRadio153">Enteros</label>
+          </div>
+
+          <div>
+            <input name="pre15Obs" type="text" class="form-control" id="formGroupExampleInput15"
+              placeholder="Observación (opcional)">
+          </div>
+
+          <!--16 Pregunta-->
+          <div>
+            <label for="formGroupExampleInput16">16 ¿Cuántos datos fluyen a través del sistema?</label>
+          </div>
+          <div class="custom-control custom-radio">
+            <input type="radio" id="customRadio161" name="pre16" class="form-check-input" value="option1">
+            <label class="form-check-label" for="customRadio161">0 - 100 datos</label>
+          </div>
+          <div class="custom-control custom-radio">
+            <input type="radio" id="customRadio162" name="pre16" class="form-check-input" value="option2">
+            <label class="form-check-label" for="customRadio162">100 - 300 datos</label>
+          </div>
+          <div class="custom-control custom-radio">
+            <input type="radio" id="customRadio163" name="pre16" class="form-check-input" value="option3" checked>
+            <label class="form-check-label" for="customRadio163">+300 datos</label>
+          </div>
+
+          <div>
+            <input name="pre16Obs" type="text" class="form-control" id="formGroupExampleInput16"
+              placeholder="¿Cuantos productos ingresara al sistema?">
+          </div>
+
+          <!--17 Pregunta-->
+
+          <div>
+            <label for="formGroupExampleInput17">17 ¿Debe retenerse algún dato por algún período de tiempo?</label>
+          </div>
+          <div class="custom-control custom-switch">
+            <div class="form-row">
+              <div class="form-group col-md-3">
+                <input type="checkbox" name="pre17" class="custom-control-input" id="customSwitch17" checked>
+                <label class="custom-control-label" for="customSwitch17">Si con persistencia</label>
+              </div>
+              <div class="col">
+                <input type="text" name="pre17Obs" class="form-control" placeholder="Persistencia de datos"
+                  id="formGroupExampleInput17">
+              </div>
+            </div>
+          </div>
         </div>
 
         <!--18 Pregunta-->
-        <input class="form-control" type="text" placeholder="Recursos" readonly>
+        <div class="jumbotron">
+
+          <input class="form-control" type="text" placeholder="Recursos" readonly disabled>
 
 
-        <div>
-          <label for="formGroupExampleInput">18 ¿Qué recursos materiales, personales o de otro tipo se requieren para
-            construir, utilizar y mantener el sistema?</label>
-        </div>
-        <div class="form-check form-check-inline">
-          <input name="pre18" class="form-check-input" type="checkbox" id="inlineCheckbox1" value="option1">
-          <label class="form-check-label" for="inlineCheckbox1">Libros</label>
-        </div>
-        <div class="form-check form-check-inline">
-          <input name="pre18" class="form-check-input" type="checkbox" id="inlineCheckbox2" value="option2">
-          <label class="form-check-label" for="inlineCheckbox2">Java</label>
-        </div>
-        <div class="form-check form-check-inline">
-          <input name="pre18" class="form-check-input" type="checkbox" id="inlineCheckbox3" value="option3" disabled>
-          <label class="form-check-label" for="inlineCheckbox3">Nodejs</label>
-        </div>
+          <div>
+            <label for="formGroupExampleInput18">18 ¿Qué recursos materiales, personales o de otro tipo se requieren
+              para
+              construir, utilizar y mantener el sistema?</label>
+          </div>
+          <div class="custom-control custom-switch">
+            <div class="form-row">
+              <div class="form-group col-md-3">
+                <input type="checkbox" name="pre18" class="custom-control-input" id="customSwitch18" checked>
+                <label class="custom-control-label" for="customSwitch18">Con acceso a internet</label>
+              </div>
+              <div class="col">
+                <input type="text" name="pre18Obs" class="form-control" placeholder="Otro recurso"
+                  id="formGroupExampleInput18">
+              </div>
+            </div>
+          </div>
 
-        <!--19 Pregunta-->
-        <div>
-          <label for="formGroupExampleInput">19 ¿Qué habilidades deben tener los desarrolladores?</label>
-        </div>
-        <div class="form-check form-check-inline">
-          <input name="pre19" class="form-check-input" type="checkbox" id="inlineCheckbox1" value="option1">
-          <label class="form-check-label" for="inlineCheckbox1">Fundamentos de programación</label>
-        </div>
-        <div class="form-check form-check-inline">
-          <input name="pre19" class="form-check-input" type="checkbox" id="inlineCheckbox2" value="option2">
-          <label class="form-check-label" for="inlineCheckbox2">Modelamiento</label>
-        </div>
-        <div class="form-check form-check-inline">
-          <input name="pre19" class="form-check-input" type="checkbox" id="inlineCheckbox3" value="option3" disabled>
-          <label class="form-check-label" for="inlineCheckbox3">Diseño de interfaces</label>
-        </div>
+          <!--19 Pregunta-->
+          <div>
+            <label for="formGroupExampleInput19">19 ¿Qué habilidades deben tener los desarrolladores?</label>
+          </div>
+          <div class="custom-control custom-radio">
+            <input type="radio" id="customRadio191" name="pre19" class="form-check-input" value="option1">
+            <label class="form-check-label" for="customRadio191">Alto nivel de conocimiento de análisis y
+              programación</label>
+          </div>
+          <div class="custom-control custom-radio">
+            <input type="radio" id="customRadio192" name="pre19" class="form-check-input" value="option2" checked>
+            <label class="form-check-label" for="customRadio192">Medio nivel de conocimiento de análisis y
+              programación</label>
+          </div>
+          <div class="custom-control custom-radio">
+            <input type="radio" id="customRadio193" name="pre19" class="form-check-input" value="option3">
+            <label class="form-check-label" for="customRadio193">Bajo nivel de conocimiento de análisis y
+              programación</label>
+          </div>
+          <div>
+            <input name="pre19Obs" type="text" class="form-control" id="formGroupExampleInput19"
+              placeholder="Observación (opcional)">
+          </div>
 
-        <!--20 Pregunta-->
+          <!--20 Pregunta-->
 
-        <div>
-          <label for="formGroupExampleInput">20 ¿Cuánto espacio físico será ocupado por el sistema?</label>
-        </div>
-        <div class="form-check form-check-inline">
-          <input name="pre20" class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio1"
-            value="option1">
-          <label class="form-check-label" for="inlineRadio1">Mesa</label>
-        </div>
-        <div class="form-check form-check-inline">
-          <input name="pre20" class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio2"
-            value="option2">
-          <label class="form-check-label" for="inlineRadio2">parte del mostrado</label>
-        </div>
-        <div class="form-check form-check-inline">
-          <input name="pre20" class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio3"
-            value="option3">
-          <label class="form-check-label" for="inlineRadio3">mueble</label>
-        </div>
+          <div>
+            <label for="formGroupExampleInput20">20 ¿Cuánto espacio físico será ocupado por el sistema?</label>
+          </div>
+          <div class="custom-control custom-switch">
+            <div class="form-row">
+              <div class="form-group col-md-3">
+                <input type="checkbox" name="pre20" class="custom-control-input" id="customSwitch20" checked>
+                <label class="custom-control-label" for="customSwitch20">Si cuenta con espacio necesario</label>
+              </div>
+              <div class="col">
+                <input type="text" name="pre20Obs" class="form-control" placeholder="¿Afecta al uso del sistema?"
+                  id="formGroupExampleInput20">
+              </div>
+            </div>
+          </div>
 
-        <!--21 Pregunta-->
-        <div>
-          <label for="formGroupExampleInput">21 ¿Cuáles son los requerimientos de energía, calefacción o
-            acondicionamiento de aire?</label>
-        </div>
-        <div class="form-check form-check-inline">
-          <input name="pre21" class="form-check-input" type="checkbox" id="inlineCheckbox1" value="option1">
-          <label class="form-check-label" for="inlineCheckbox1">Ambiente con riesgo a liquidos</label>
-        </div>
-        <div class="form-check form-check-inline">
-          <input name="pre21" class="form-check-input" type="checkbox" id="inlineCheckbox2" value="option2">
-          <label class="form-check-label" for="inlineCheckbox2">Ambiente con aire</label>
-        </div>
-        <div class="form-check form-check-inline">
-          <input name="pre21" class="form-check-input" type="checkbox" id="inlineCheckbox3" value="option3" disabled>
-          <label class="form-check-label" for="inlineCheckbox3">Riesgo de caerse</label>
-        </div>
+          <!--21 Pregunta-->
+          <div>
+            <label for="formGroupExampleInput21">21 ¿Cuáles son los requerimientos de energía, calefacción o
+              acondicionamiento de aire?</label>
+          </div>
+          <div class="custom-control custom-switch">
+            <div class="custom-control custom-switch">
+              <input name="pre21x1" type="checkbox" class="custom-control-input" id="customSwitch211">
+              <label class="custom-control-label" for="customSwitch211">Cortes de luz periodicos</label>
+            </div>
+            <div class="custom-control custom-switch">
+              <input name="pre21x2" type="checkbox" class="custom-control-input" id="customSwitch212">
+              <label class="custom-control-label" for="customSwitch212">Extremo calor</label>
+            </div>
 
-        <!--22 Pregunta-->
 
-        <div>
-          <label for="formGroupExampleInput">22 ¿Existe un cronograma prescrito para el desarrollo?</label>
-        </div>
-        <div class="form-check form-check-inline">
-          <input name="pre22" class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio1"
-            value="option1">
-          <label class="form-check-label" for="inlineRadio1">Nose dio Fecha limite</label>
-        </div>
-        <div class="form-check form-check-inline">
-          <input name="pre22" name="pre21" class="form-check-input" type="radio" name="inlineRadioOptions"
-            id="inlineRadio2" value="option2">
-          <label class="form-check-label" for="inlineRadio2">Fecha limite del curso</label>
-        </div>
-        <div class="form-check form-check-inline">
-          <input name="pre22" class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio3"
-            value="option3">
-          <label class="form-check-label" for="inlineRadio3">Ajustado al alcance</label>
-        </div>
+          </div>
+          <div>
+            <input name="pre21Obs" type="text" class="form-control" id="formGroupExampleInput21"
+              placeholder="Hardware específico">
+          </div>
 
-        <!--23 Pregunta-->
+          <!--22 Pregunta-->
 
-        <div>
-          <label for="formGroupExampleInput">23 ¿Existe un límite sobre la cantidad de dinero a gastar en el desarrollo
-            o en hardware y software?</label>
-        </div>
-        <div class="form-check form-check-inline">
-          <input name="pre23" class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio1"
-            value="option1">
-          <label class="form-check-label" for="inlineRadio1">No hay precio</label>
-        </div>
-        <div class="form-check form-check-inline">
-          <input name="pre23" class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio2"
-            value="option2">
-          <label class="form-check-label" for="inlineRadio2">Precio deacuerdo a lo que usa</label>
-        </div>
-        <div class="form-check form-check-inline">
-          <input name="pre23" class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio3"
-            value="option3">
-          <label class="form-check-label" for="inlineRadio3">Por cantidad de modulos</label>
+          <div>
+            <label for="formGroupExampleInput22">22 ¿Existe un cronograma prescrito para el desarrollo?</label>
+          </div>
+          <div class="custom-control custom-radio">
+            <input type="radio" id="customRadio221" name="pre22" class="form-check-input" value="option1">
+            <label class="form-check-label" for="customRadio221">No se dio Fecha límite</label>
+          </div>
+          <div class="custom-control custom-radio">
+            <input type="radio" id="customRadio222" name="pre22" class="form-check-input" value="option2" checked>
+            <label class="form-check-label" for="customRadio222">Fecha límite del curso</label>
+          </div>
+          <div class="custom-control custom-radio">
+            <input type="radio" id="customRadio223" name="pre22" class="form-check-input" value="option3">
+            <label class="form-check-label" for="customRadio223">Ajustado al alcance</label>
+          </div>
+
+          <div>
+            <input name="pre22Obs" type="text" class="form-control" id="formGroupExampleInput22"
+              placeholder="Especifique (opcional)">
+          </div>
+
+          <!--23 Pregunta-->
+
+          <div>
+            <label for="formGroupExampleInput23">23 ¿Existe un límite sobre la cantidad de dinero a gastar en el
+              desarrollo
+              o en hardware y software?</label>
+          </div>
+          <div class="custom-control custom-switch">
+            <div class="form-row">
+              <div class="form-group col-md-3">
+                <input type="checkbox" name="pre23" class="custom-control-input" id="customSwitch23">
+                <label class="custom-control-label" for="customSwitch23">Existe un limite</label>
+              </div>
+              <div class="col">
+                <input type="text" name="pre23Obs" class="form-control" placeholder="Especifique"
+                  id="formGroupExampleInput23">
+              </div>
+            </div>
+          </div>
         </div>
 
         <!--24 Pregunta-->
-        <input class="form-control" type="text" placeholder="Ambiente físico" readonly>
+        <div class="jumbotron">
 
-        <div>
-          <label for="formGroupExampleInput">24 ¿Dónde esta el equipo que el sistema necesita para funcionar?</label>
-        </div>
-        <div class="form-check form-check-inline">
-          <input name="pre24" class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio1"
-            value="option1">
-          <label class="form-check-label" for="inlineRadio1">Cerca al negocio</label>
-        </div>
-        <div class="form-check form-check-inline">
-          <input name="pre24" class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio2"
-            value="option2">
-          <label class="form-check-label" for="inlineRadio2">Lugar distinto</label>
-        </div>
-        <div class="form-check form-check-inline">
-          <input name="pre24" class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio3"
-            value="option3">
-          <label class="form-check-label" for="inlineRadio3">Cerca al gerente</label>
-        </div>
+          <input class="form-control" type="text" placeholder="Ambiente físico" readonly disabled>
 
-        <!--25 Pregunta-->
+          <div>
+            <label for="formGroupExampleInput24">24 ¿Dónde esta el equipo que el sistema necesita para
+              funcionar?</label>
+          </div>
+          <div class="custom-control custom-radio">
+            <input type="radio" id="customRadio241" name="pre24" class="form-check-input" value="option1" checked>
+            <label class="form-check-label" for="customRadio241">Recepción</label>
+          </div>
+          <div class="custom-control custom-radio">
+            <input type="radio" id="customRadio242" name="pre24" class="form-check-input" value="option2">
+            <label class="form-check-label" for="customRadio242">Almacen</label>
+          </div>
+          <div class="custom-control custom-radio">
+            <input type="radio" id="customRadio243" name="pre24" class="form-check-input" value="option3">
+            <label class="form-check-label" for="customRadio243">Predefinido por el cliente</label>
+          </div>
 
-        <div>
-          <label for="formGroupExampleInput">25 ¿Existe una localización o varias?</label>
-        </div>
-        <div class="form-check form-check-inline">
-          <input name="pre25" class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio1"
-            value="option1">
-          <label class="form-check-label" for="inlineRadio1">1-2</label>
-        </div>
-        <div class="form-check form-check-inline">
-          <input name="pre25" class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio2"
-            value="option2">
-          <label class="form-check-label" for="inlineRadio2">3-5</label>
-        </div>
-        <div class="form-check form-check-inline">
-          <input name="pre25" class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio3"
-            value="option3">
-          <label class="form-check-label" for="inlineRadio3">+5</label>
-        </div>
+          <div>
+            <input name="pre24Obs" type="text" class="form-control" id="formGroupExampleInput24"
+              placeholder="Observación (opcional)">
+          </div>
 
-        <!--26 Pregunta-->
+          <!--25 Pregunta-->
 
-        <div>
-          <label for="formGroupExampleInput">26 ¿Hay restricciones ambientales como temperatura, humedad o interferencia
-            magnética?</label>
-        </div>
-        <div class="form-check form-check-inline">
-          <input name="pre26" class="form-check-input" type="checkbox" id="inlineCheckbox1" value="option1">
-          <label class="form-check-label" for="inlineCheckbox1">Riesgo de temperatura</label>
-        </div>
-        <div class="form-check form-check-inline">
-          <input name="pre26" class="form-check-input" type="checkbox" id="inlineCheckbox2" value="option2">
-          <label class="form-check-label" for="inlineCheckbox2">Riesgo de humedad</label>
-        </div>
-        <div class="form-check form-check-inline">
-          <input name="pre26" class="form-check-input" type="checkbox" id="inlineCheckbox3" value="option3" disabled>
-          <label class="form-check-label" for="inlineCheckbox3">Riesgo de interferencia magnética</label>
+          <div>
+            <label for="formGroupExampleInput25">25 ¿Existe una localización o varias?</label>
+          </div>
+          <div class="custom-control custom-radio">
+            <input type="radio" id="customRadio251" name="pre25" class="form-check-input" value="option1" checked>
+            <label class="form-check-label" for="customRadio251">1 localización</label>
+          </div>
+          <div class="custom-control custom-radio">
+            <input type="radio" id="customRadio252" name="pre25" class="form-check-input" value="option2">
+            <label class="form-check-label" for="customRadio252">2 localización</label>
+          </div>
+          <div class="custom-control custom-radio">
+            <input type="radio" id="customRadio253" name="pre25" class="form-check-input" value="option3">
+            <label class="form-check-label" for="customRadio253">3+ localización</label>
+          </div>
+
+          <div>
+            <input name="pre25Obs" type="text" class="form-control" id="formGroupExampleInput25"
+              placeholder="Observación (opcional)">
+          </div>
+
+          <!--26 Pregunta-->
+
+          <div>
+            <label for="formGroupExampleInput26">26 ¿Hay restricciones ambientales como temperatura, humedad o
+              interferencia magnética?</label>
+          </div>
+          <div class="custom-control custom-switch">
+            <div class="custom-control custom-switch">
+              <input name="pre26x1" type="checkbox" class="custom-control-input" id="customSwitch261">
+              <label class="custom-control-label" for="customSwitch261">Riesgo a calentarse</label>
+            </div>
+            <div class="custom-control custom-switch">
+              <input name="pre26x2" type="checkbox" class="custom-control-input" id="customSwitch262">
+              <label class="custom-control-label" for="customSwitch262">Riesgo al agua</label>
+            </div>
+            <div class="custom-control custom-switch">
+              <input name="pre26x3" type="checkbox" class="custom-control-input" id="customSwitch263">
+              <label class="custom-control-label" for="customSwitch263">Riesgo a interferencia magnetica</label>
+            </div>
+          </div>
+
+          <div>
+            <input name="pre26Obs" type="text" class="form-control" id="formGroupExampleInput26"
+              placeholder="Observación (opcional)">
+          </div>
         </div>
 
         <!--27 Pregunta-->
-        <input class="form-control" type="text" placeholder="Interfaces" readonly>
+        <div class="jumbotron">
+          <input class="form-control" type="text" placeholder="Interfaces" readonly disabled>
 
-        <div>
-          <label for="formGroupExampleInput">27 ¿La entrada proviene de uno o más sistemas?</label>
-        </div>
-        <div class="form-check form-check-inline">
-          <input name="pre27" class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio1"
-            value="option1">
-          <label class="form-check-label" for="inlineRadio1">1-2</label>
-        </div>
-        <div class="form-check form-check-inline">
-          <input name="pre27" class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio2"
-            value="option2">
-          <label class="form-check-label" for="inlineRadio2">3-5</label>
-        </div>
-        <div class="form-check form-check-inline">
-          <input name="pre27" class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio3"
-            value="option3">
-          <label class="form-check-label" for="inlineRadio3">+5</label>
-        </div>
+          <div>
+            <label for="formGroupExampleInput27">27 ¿La entrada proviene de uno o más sistemas?</label>
+          </div>
+
+          <div class="custom-control custom-radio">
+            <input type="radio" id="customRadio271" name="pre27" class="form-check-input" value="option1" checked>
+            <label class="form-check-label" for="customRadio271">NINGUNO</label>
+          </div>
+          <div class="custom-control custom-radio">
+            <input type="radio" id="customRadio272" name="pre27" class="form-check-input" value="option2">
+            <label class="form-check-label" for="customRadio272">UNO</label>
+          </div>
+          <div class="custom-control custom-radio">
+            <input type="radio" id="customRadio273" name="pre27" class="form-check-input" value="option3">
+            <label class="form-check-label" for="customRadio273">MÁS SISTEMAS</label>
+          </div>
+
+          <div>
+            <input name="pre27Obs" type="text" class="form-control" id="formGroupExampleInput27"
+              placeholder="Observación (opcional)">
+          </div>
 
 
-        <!--28 Pregunta-->
+          <!--28 Pregunta-->
 
-        <div>
-          <label for="formGroupExampleInput">28 ¿La salida va a uno o más sistemas?</label>
-        </div>
-        <div class="form-check form-check-inline">
-          <input name="pre28" class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio1"
-            value="option1">
-          <label class="form-check-label" for="inlineRadio1">sistema unico</label>
-        </div>
-        <div class="form-check form-check-inline">
-          <input name="pre28" class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio2"
-            value="option2">
-          <label class="form-check-label" for="inlineRadio2">Sistema dual</label>
-        </div>
-        <div class="form-check form-check-inline">
-          <input name="pre28" class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio3"
-            value="option3">
-          <label class="form-check-label" for="inlineRadio3">mas 3</label>
-        </div>
+          <div>
+            <label for="formGroupExampleInput28">28 ¿La salida va a uno o más sistemas?</label>
+          </div>
+          <div class="custom-control custom-radio">
+            <input type="radio" id="customRadio281" name="pre28" class="form-check-input" value="option1" checked>
+            <label class="form-check-label" for="customRadio281">NINGUNO</label>
+          </div>
+          <div class="custom-control custom-radio">
+            <input type="radio" id="customRadio282" name="pre28" class="form-check-input" value="option2">
+            <label class="form-check-label" for="customRadio282">UNO</label>
+          </div>
+          <div class="custom-control custom-radio">
+            <input type="radio" id="customRadio283" name="pre28" class="form-check-input" value="option3">
+            <label class="form-check-label" for="customRadio283">MÁS SISTEMAS</label>
+          </div>
 
-        <!--29 Pregunta-->
+          <div>
+            <input name="pre28Obs" type="text" class="form-control" id="formGroupExampleInput28"
+              placeholder="Observación (opcional)">
+          </div>
 
-        <div>
-          <label for="formGroupExampleInput">29 ¿Existe una manera preestablecida en que deben formatearse los
-            datos?</label>
-        </div>
-        <div class="form-check form-check-inline">
-          <input name="pre29" class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio1"
-            value="option1">
-          <label class="form-check-label" for="inlineRadio1">Cuadro</label>
-        </div>
-        <div class="form-check form-check-inline">
-          <input name="pre29" class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio2"
-            value="option2">
-          <label class="form-check-label" for="inlineRadio2">Recibo</label>
-        </div>
-        <div class="form-check form-check-inline">
-          <input name="pre29" class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio3"
-            value="option3">
-          <label class="form-check-label" for="inlineRadio3">txt</label>
-        </div>
+          <!--29 Pregunta-->
 
+          <div>
+            <label for="formGroupExampleInput29">29 ¿Existe una manera preestablecida en que deben formatearse los
+              datos?</label>
+          </div>
+          <div class="custom-control custom-radio29">
+            <input type="radio" id="customRadio291" name="pre29" class="form-check-input" value="option1" checked>
+            <label class="form-check-label" for="customRadio291">No hay formato</label>
+          </div>
+          <div class="custom-control custom-radio">
+            <input type="radio" id="customRadio292" name="pre29" class="form-check-input" value="option2">
+            <label class="form-check-label" for="customRadio292">Predefinido por el cliente</label>
+          </div>
+
+
+          <div>
+            <input name="pre29Obs" type="text" class="form-control" id="formGroupExampleInput29"
+              placeholder="Observación (opcional)">
+          </div>
+
+        </div>
         <!--30 Pregunta-->
-        <input class="form-control" type="text" placeholder="Aseguramiento de la calidad" readonly>
+        <div class="jumbotron">
+          <input class="form-control" type="text" placeholder="Aseguramiento de la calidad" readonly disabled>
+
+          <div>
+            <label for="formGroupExampleInput30">30 ¿Cuáles son los requerimientos para la confiabilidad,
+              disponibilidad,
+              facilidad de mantenimiento, seguridad y demás atributos de calidad?</label>
+          </div>
 
 
-        <div>
-          <label for="formGroupExampleInput">30 ¿Cuáles son los requerimientos para la confiabilidad, disponibilidad,
-            facilidad de mantenimiento, seguridad y demás atributos de calidad?</label>
-        </div>
-        <div class="form-check form-check-inline">
-          <input name="pre30" class="form-check-input" type="checkbox" id="inlineCheckbox1" value="option1">
-          <label class="form-check-label" for="inlineCheckbox1">Prioridad confiabilidad</label>
-        </div>
-        <div class="form-check form-check-inline">
-          <input name="pre30" class="form-check-input" type="checkbox" id="inlineCheckbox2" value="option2">
-          <label class="form-check-label" for="inlineCheckbox2">Confiabiidad disponilidad</label>
-        </div>
-        <div class="form-check form-check-inline">
-          <input name="pre30" class="form-check-input" type="checkbox" id="inlineCheckbox3" value="option3" disabled>
-          <label class="form-check-label" for="inlineCheckbox3">Facilidad de mantenimiento</label>
-        </div>
-        <div class="form-check form-check-inline">
-          <input name="pre30" class="form-check-input" type="checkbox" id="inlineCheckbox3" value="option3" disabled>
-          <label class="form-check-label" for="inlineCheckbox3">Seguridad</label>
-        </div>
+          <div class="custom-control custom-switch">
+            <div class="custom-control custom-switch">
+              <input name="pre30x1" type="checkbox" class="custom-control-input" id="customSwitch301">
+              <label class="custom-control-label" for="customSwitch301">Prioridad a confiabilidad</label>
+            </div>
+            <div class="custom-control custom-switch">
+              <input name="pre30x2" type="checkbox" class="custom-control-input" id="customSwitch302">
+              <label class="custom-control-label" for="customSwitch302">Prioridad a disponibilidad</label>
+            </div>
+            <div class="custom-control custom-switch">
+              <input name="pre30x3" type="checkbox" class="custom-control-input" id="customSwitch303">
+              <label class="custom-control-label" for="customSwitch303">Prioridad a facilidad de mantenimiento</label>
+            </div>
+            <div class="custom-control custom-switch">
+              <input name="pre30x4" type="checkbox" class="custom-control-input" id="customSwitch304">
+              <label class="custom-control-label" for="customSwitch304">Prioridad a seguridad</label>
+            </div>
 
-        <!--31 Pregunta-->
+          </div>
 
-        <div>
-          <label for="formGroupExampleInput">31 ¿Cómo deben demostrarse las características del sistema a
-            terceros?</label>
-        </div>
-        <div class="form-check form-check-inline">
-          <input name="pre31" class="form-check-input" type="checkbox" id="inlineCheckbox1" value="option1">
-          <label class="form-check-label" for="inlineCheckbox1">Tutorial interactivo</label>
-        </div>
-        <div class="form-check form-check-inline">
-          <input name="pre31" class="form-check-input" type="checkbox" id="inlineCheckbox2" value="option2">
-          <label class="form-check-label" for="inlineCheckbox2">El propio sistema</label>
-        </div>
-        <div class="form-check form-check-inline">
-          <input name="pre31" class="form-check-input" type="checkbox" id="inlineCheckbox3" value="option3" disabled>
-          <label class="form-check-label" for="inlineCheckbox3">Manual de usuario</label>
-        </div>
-        <div class="form-check form-check-inline">
-          <input name="pre31" class="form-check-input" type="checkbox" id="inlineCheckbox3" value="option3" disabled>
-          <label class="form-check-label" for="inlineCheckbox3">Capacitación</label>
-        </div>
+          <div>
+            <input name="pre30Obs" type="text" class="form-control" id="formGroupExampleInput30"
+              placeholder="Otra prioridad a especificar">
+          </div>
 
-        <!--32 Pregunta-->
+          <!--31 Pregunta-->
 
-        <div>
-          <label for="formGroupExampleInput">32 ¿La salida va a uno o más sistemas?</label>
-        </div>
-        <div class="form-check form-check-inline">
-          <input name="pre32" class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio1"
-            value="option1">
-          <label class="form-check-label" for="inlineRadio1">Mostrar los errores</label>
-        </div>
-        <div class="form-check form-check-inline">
-          <input name="pre32" class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio2"
-            value="option2">
-          <label class="form-check-label" for="inlineRadio2">Capturar errores</label>
-        </div>
-        <div class="form-check form-check-inline">
-          <input name="pre32" class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio3"
-            value="option3">
-          <label class="form-check-label" for="inlineRadio3">mostrar y capturar los errores</label>
-        </div>
+          <div>
+            <label for="formGroupExampleInput31">31 ¿Cómo deben demostrarse las características del sistema a
+              terceros?</label>
+          </div>
 
-        <!--33 Pregunta-->
+          <div class="custom-control custom-switch">
+            <div class="custom-control custom-switch">
+              <input name="pre31x1" type="checkbox" class="custom-control-input" id="customSwitch311">
+              <label class="custom-control-label" for="customSwitch311">Intuición</label>
+            </div>
+            <div class="custom-control custom-switch">
+              <input name="pre31x2" type="checkbox" class="custom-control-input" id="customSwitch312">
+              <label class="custom-control-label" for="customSwitch312">Guia parte del programa</label>
+            </div>
+            <div class="custom-control custom-switch">
+              <input name="pre31x3" type="checkbox" class="custom-control-input" id="customSwitch313">
+              <label class="custom-control-label" for="customSwitch313">Manual de usuario</label>
+            </div>
 
-        <div>
-          <label for="formGroupExampleInput">33 ¿Cuál es el promedio de tiempo prescrito entre fallas?</label>
-        </div>
-        <div class="form-check form-check-inline">
-          <input name="pre33" class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio1"
-            value="option1">
-          <label class="form-check-label" for="inlineRadio1">1-2 segundos</label>
-        </div>
-        <div class="form-check form-check-inline">
-          <input name="pre33" class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio2"
-            value="option2">
-          <label class="form-check-label" for="inlineRadio2">3-4 segundos</label>
-        </div>
-        <div class="form-check form-check-inline">
-          <input name="pre33" class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio3"
-            value="option3">
-          <label class="form-check-label" for="inlineRadio3">5-6 segundos</label>
-        </div>
 
-        <!--34 Pregunta-->
+          </div>
+          <div>
+            <input name="pre31Obs" type="text" class="form-control" id="formGroupExampleInput31"
+              placeholder="Observación (opcional)">
+          </div>
 
-        <div>
-          <label for="formGroupExampleInput">34 ¿Existe un tiempo máximo permitio para la recuperación del sistema
-            después de una falla?</label>
-        </div>
-        <div class="form-check form-check-inline">
-          <input name="pre34" class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio1"
-            value="option1">
-          <label class="form-check-label" for="inlineRadio1">1-2 segundos</label>
-        </div>
-        <div class="form-check form-check-inline">
-          <input name="pre34" class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio2"
-            value="option2">
-          <label class="form-check-label" for="inlineRadio2">3-4 segundos</label>
-        </div>
-        <div class="form-check form-check-inline">
-          <input name="pre34" class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio3"
-            value="option3">
-          <label class="form-check-label" for="inlineRadio3">5-6 segundos</label>
-        </div>
+          <!--32 Pregunta-->
 
-        <!--35 Pregunta-->
+          <div>
+            <label for="formGroupExampleInput32">32 ¿El sistema debe detectar y aislar defectos?</label>
+          </div>
 
-        <div>
-          <label for="formGroupExampleInput">35 ¿El mantenimiento corregirá los errores, o incluirá también el
-            mejoramiento del sistema?</label>
-        </div>
-        <div class="form-check form-check-inline">
-          <input name="pre35" class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio1"
-            value="option1">
-          <label class="form-check-label" for="inlineRadio1">Luego de 1 mes de dejarlo funcionando</label>
-        </div>
-        <div class="form-check form-check-inline">
-          <input name="pre35" class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio2"
-            value="option2">
-          <label class="form-check-label" for="inlineRadio2">Luego de 1 año</label>
-        </div>
-        <div class="form-check form-check-inline">
-          <input name="pre35" class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio3"
-            value="option3">
-          <label class="form-check-label" for="inlineRadio3">A la semana</label>
-        </div>
+          <div class="custom-control custom-switch">
+            <div class="form-row">
+              <div class="form-group col-md-3">
+                <input type="checkbox" name="pre32" class="custom-control-input" id="customSwitch32">
+                <label class="custom-control-label" for="customSwitch32">Si debe detectar y aislar</label>
+              </div>
+              <div class="col">
+                <input type="text" name="pre32Obs" class="form-control" placeholder="Observación (opcional)"
+                  id="formGroupExampleInput32">
+              </div>
+            </div>
+          </div>
 
-        <!--36 Pregunta-->
+          <!--33 Pregunta-->
 
-        <div>
-          <label for="formGroupExampleInput">36 ¿Qué medidas de eficiencia se aplicarán al uso de recursos y al tiempo
-            de respuesta?</label>
-        </div>
-        <div class="form-check form-check-inline">
-          <input name="pre36" class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio1"
-            value="option1">
-          <label class="form-check-label" for="inlineRadio1">Busqueda mejorada</label>
-        </div>
-        <div class="form-check form-check-inline">
-          <input name="pre36" class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio2"
-            value="option2">
-          <label class="form-check-label" for="inlineRadio2">Almacenamiento mejorado</label>
-        </div>
-        <div class="form-check form-check-inline">
-          <input name="pre36" class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio3"
-            value="option3">
-          <label class="form-check-label" for="inlineRadio3">Costo reducido</label>
-        </div>
+          <div>
+            <label for="formGroupExampleInput33">33 ¿Cuál es el promedio de tiempo prescrito entre fallas?</label>
+          </div>
+          <div class="custom-control custom-switch">
+            <div class="form-row">
+              <div class="form-group col-md-3">
+                <input type="checkbox" name="pre33" class="custom-control-input" id="customSwitch33" checked>
+                <label class="custom-control-label" for="customSwitch33">Menor a 1 segundo</label>
+              </div>
+              <div class="col">
+                <input type="text" name="pre33Obs" class="form-control" placeholder="Observación (opcional)"
+                  id="formGroupExampleInput33">
+              </div>
+            </div>
+          </div>
 
-        <!--37 Pregunta-->
+          <!--34 Pregunta-->
 
-        <div>
-          <label for="formGroupExampleInput">37 ¿Cuán fácil debe ser mover el sistema de una ubicación a otra de un tipo
-            de computadora a otro?</label>
-        </div>
-        <div class="form-check form-check-inline">
-          <input name="pre37" class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio1"
-            value="option1">
-          <label class="form-check-label" for="inlineRadio1">Lugar fijo</label>
-        </div>
-        <div class="form-check form-check-inline">
-          <input name="pre37" class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio2"
-            value="option2">
-          <label class="form-check-label" for="inlineRadio2">Fácil de mover</label>
-        </div>
-        <div class="form-check form-check-inline">
-          <input name="pre37" class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio3"
-            value="option3">
-          <label class="form-check-label" for="inlineRadio3">Costo reducido</label>
-        </div>
+          <div>
+            <label for="formGroupExampleInput34">34 ¿Existe un tiempo máximo permitio para la recuperación del sistema
+              después de una falla?</label>
+          </div>
+          <div class="custom-control custom-switch">
+            <div class="form-row">
+              <div class="form-group col-md-3">
+                <input type="checkbox" name="pre34" class="custom-control-input" id="customSwitch34" checked>
+                <label class="custom-control-label" for="customSwitch34">No precisado</label>
+              </div>
+              <div class="col">
+                <input type="text" name="pre34Obs" class="form-control" placeholder="Observación (opcional)"
+                  id="formGroupExampleInput34">
+              </div>
+            </div>
+          </div>
 
+          <!--35 Pregunta-->
+
+          <div>
+            <label for="formGroupExampleInput35">35 ¿El mantenimiento corregirá los errores, o incluirá también el
+              mejoramiento del sistema?</label>
+          </div>
+          <div class="custom-control custom-switch">
+            <div class="form-row">
+              <div class="form-group col-md-3">
+                <input type="checkbox" name="pre35" class="custom-control-input" id="customSwitch35">
+                <label class="custom-control-label" for="customSwitch35">Mantenimiento con mejoras</label>
+              </div>
+              <div class="col">
+                <input type="text" name="pre35Obs" class="form-control" placeholder="Observación (opcional)"
+                  id="formGroupExampleInput35">
+              </div>
+            </div>
+          </div>
+
+          <!--36 Pregunta-->
+
+          <div>
+            <label for="formGroupExampleInput36">36 ¿Qué medidas de eficiencia se aplicarán al uso de recursos y al
+              tiempo
+              de respuesta?</label>
+          </div>
+
+          <div class="custom-control custom-switch">
+            <div class="form-row">
+              <div class="form-group col-md-3">
+                <input type="checkbox" name="pre36" class="custom-control-input" id="customSwitch36">
+                <label class="custom-control-label" for="customSwitch36">Sujeto a un estandar específico</label>
+              </div>
+              <div class="col">
+                <input type="text" name="pre36Obs" class="form-control" placeholder="Observación (opcional)"
+                  id="formGroupExampleInput36">
+              </div>
+            </div>
+          </div>
+
+          <!--37 Pregunta-->
+
+          <div>
+            <label for="formGroupExampleInput37">37 ¿Cuán fácil debe ser mover el sistema de una ubicación a otra de un
+              tipomde computadora a otro?</label>
+          </div>
+          <div class="custom-control custom-radio">
+            <input type="radio" id="customRadio371" name="pre37" class="form-check-input" value="option1" checked>
+            <label class="form-check-label" for="customRadio371">Sin ayuda</label>
+          </div>
+          <div class="custom-control custom-radio">
+            <input type="radio" id="customRadio372" name="pre37" class="form-check-input" value="option2">
+            <label class="form-check-label" for="customRadio372">Con ayuda</label>
+          </div>
+          <div class="custom-control custom-radio">
+            <input type="radio" id="customRadio373" name="pre37" class="form-check-input" value="option3">
+            <label class="form-check-label" for="customRadio373">No se puede mover</label>
+          </div>
+
+          <div>
+            <input name="pre37Obs" type="text" class="form-control" id="formGroupExampleInput37"
+              placeholder="Observación (opcional)">
+          </div>
+        </div>
 
         <!--38 Pregunta-->
-        <input class="form-control" type="text" placeholder="Seguridad" readonly>
+        <div class="jumbotron">
+          <input class="form-control" type="text" placeholder="Seguridad" readonly disabled>
 
 
-        <div>
-          <label for="formGroupExampleInput">38 ¿Cuán fácil debe ser mover el sistema de una ubicación a otra de un tipo
-            de computadora a otro?</label>
-        </div>
-        <div class="form-check form-check-inline">
-          <input name="pre38" class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio1"
-            value="option1">
-          <label class="form-check-label" for="inlineRadio1">Login</label>
-        </div>
-        <div class="form-check form-check-inline">
-          <input name="pre38" class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio2"
-            value="option2">
-          <label class="form-check-label" for="inlineRadio2">Huella dactilar</label>
-        </div>
-        <div class="form-check form-check-inline">
-          <input name="pre38" class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio3"
-            value="option3">
-          <label class="form-check-label" for="inlineRadio3">Clave de ingreso</label>
-        </div>
+          <div>
+            <label for="formGroupExampleInput38">38 ¿Debe controlarse el acceso al sistema o a la información?</label>
+          </div>
+          <div class="custom-control custom-radio">
+            <input type="radio" id="customRadio381" name="pre38" class="form-check-input" value="option1" checked>
+            <label class="form-check-label" for="customRadio381">Acceso restringido</label>
+          </div>
+          <div class="custom-control custom-radio">
+            <input type="radio" id="customRadio382" name="pre38" class="form-check-input" value="option2">
+            <label class="form-check-label" for="customRadio382">Acceso al publico</label>
+          </div>
+          <div class="custom-control custom-radio">
+            <input type="radio" id="customRadio383" name="pre38" class="form-check-input" value="option3">
+            <label class="form-check-label" for="customRadio383">Totalmente privado</label>
+          </div>
 
-        <!--39 Pregunta-->
+          <div>
+            <input name="pre38Obs" type="text" class="form-control" id="formGroupExampleInput38"
+              placeholder="Observación (opcional)">
+          </div>
 
-        <div>
-          <label for="formGroupExampleInput">39 ¿Debe controlarse el acceso al sistema o a la información?</label>
-        </div>
-        <div class="form-check form-check-inline">
-          <input name="pre39" class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio1"
-            value="option1">
-          <label class="form-check-label" for="inlineRadio1">JSON</label>
-        </div>
-        <div class="form-check form-check-inline">
-          <input name="pre39" class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio2"
-            value="option2">
-          <label class="form-check-label" for="inlineRadio2">text</label>
-        </div>
-        <div class="form-check form-check-inline">
-          <input name="pre39" class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio3"
-            value="option3">
-          <label class="form-check-label" for="inlineRadio3">base de datos</label>
-        </div>
+          <!--39 Pregunta-->
 
+          <div>
+            <label for="formGroupExampleInput39">39 ¿Cómo se podrán aislar los datos de un usuario de los de
+              otros?</label>
+          </div>
+          <div class="custom-control custom-radio">
+            <input type="radio" id="customRadio391" name="pre39" class="form-check-input" value="option1" checked>
+            <label class="form-check-label" for="customRadio391">Restricción por contraseña</label>
+          </div>
+          <div class="custom-control custom-radio">
+            <input type="radio" id="customRadio392" name="pre39" class="form-check-input" value="option2">
+            <label class="form-check-label" for="customRadio392">Restricción por IP</label>
+          </div>
+          <div class="custom-control custom-radio">
+            <input type="radio" id="customRadio393" name="pre39" class="form-check-input" value="option3">
+            <label class="form-check-label" for="customRadio393">Restricción por celular</label>
+          </div>
 
-        <!--40 Pregunta-->
-
-        <div>
-          <label for="formGroupExampleInput">40 ¿Cómo podrán aislarse los programas de usuario de los otros programas y
-            del sistema operativo?</label>
-        </div>
-        <div class="form-check form-check-inline">
-          <input name="pre40" class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio1"
-            value="option1">
-          <label class="form-check-label" for="inlineRadio1">misma computadora</label>
-        </div>
-        <div class="form-check form-check-inline">
-          <input name="pre40" class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio2"
-            value="option2">
-          <label class="form-check-label" for="inlineRadio2">portable</label>
-        </div>
-        <div class="form-check form-check-inline">
-          <input name="pre40" class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio3"
-            value="option3">
-          <label class="form-check-label" for="inlineRadio3">requiere instalarse</label>
-        </div>
-
-        <!--41 Pregunta-->
-
-        <div>
-          <label for="formGroupExampleInput">41 ¿Con qué frecuencia deben hacerse copias de respaldo?</label>
-        </div>
-        <div class="form-check form-check-inline">
-          <input name="pre41" class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio1"
-            value="option1">
-          <label class="form-check-label" for="inlineRadio1">diario</label>
-        </div>
-        <div class="form-check form-check-inline">
-          <input name="pre41" class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio2"
-            value="option2">
-          <label class="form-check-label" for="inlineRadio2">semanal</label>
-        </div>
-        <div class="form-check form-check-inline">
-          <input name="pre41" class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio3"
-            value="option3">
-          <label class="form-check-label" for="inlineRadio3">mes</label>
-        </div>
-
-        <!--42 Pregunta-->
-
-        <div>
-          <label for="formGroupExampleInput">42 ¿Las copias de respaldo deben almacenarse en un lugar diferente?</label>
-        </div>
-        <div class="form-check form-check-inline">
-          <input name="pre42" class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio1"
-            value="option1">
-          <label class="form-check-label" for="inlineRadio1">si drive</label>
-        </div>
-        <div class="form-check form-check-inline">
-          <input name="pre42" class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio2"
-            value="option2">
-          <label class="form-check-label" for="inlineRadio2">no local</label>
-        </div>
-        <div class="form-check form-check-inline">
-          <input name="pre42" class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio3"
-            value="option3">
-          <label class="form-check-label" for="inlineRadio3">si texto</label>
-        </div>
-
-        <!--43 Pregunta-->
-
-        <div>
-          <label for="formGroupExampleInput">43 ¿Deben tomarse precauciones contra el fuego, el daño provocado por agua
-            o el robo?</label>
-        </div>
-        <div class="form-check form-check-inline">
-          <input name="pre43" class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio1"
-            value="option1">
-          <label class="form-check-label" for="inlineRadio1">si</label>
-        </div>
-        <div class="form-check form-check-inline">
-          <input name="pre43" class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio2"
-            value="option2">
-          <label class="form-check-label" for="inlineRadio2">no</label>
-        </div>
-        <div class="form-check form-check-inline">
-          <input name="pre43" class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio3"
-            value="option3">
-          <label class="form-check-label" for="inlineRadio3">si texto</label>
-        </div>
+          <div>
+            <input name="pre39Obs" type="text" class="form-control" id="formGroupExampleInput39"
+              placeholder="Otro especifique">
+          </div>
 
 
+          <!--40 Pregunta-->
 
+          <div>
+            <label for="formGroupExampleInput40">40 ¿Cómo podrán aislarse los programas de usuario de los otros
+              programas
+              y
+              del sistema operativo?</label>
+          </div>
+          <div class="custom-control custom-radio">
+            <input type="radio" id="customRadio401" name="pre40" class="form-check-input" value="option1" checked>
+            <label class="form-check-label" for="customRadio401">Ninguno</label>
+          </div>
+          <div class="custom-control custom-radio">
+            <input type="radio" id="customRadio402" name="pre40" class="form-check-input" value="option2">
+            <label class="form-check-label" for="customRadio402">Encapsulamiento Parcial</label>
+          </div>
+          <div class="custom-control custom-radio">
+            <input type="radio" id="customRadio403" name="pre40" class="form-check-input" value="option3">
+            <label class="form-check-label" for="customRadio403">Encapsulamiento total</label>
+          </div>
+
+          <div>
+            <input name="pre40Obs" type="text" class="form-control" id="formGroupExampleInput40"
+              placeholder="Observación (opcional)">
+          </div>
+
+          <!--41 Pregunta-->
+
+          <div>
+            <label for="formGroupExampleInput41">41 ¿Con qué frecuencia deben hacerse copias de respaldo?</label>
+          </div>
+
+          <div class="custom-control custom-radio">
+            <input type="radio" id="customRadio411" name="pre41" class="form-check-input" value="option1" checked>
+            <label class="form-check-label" for="customRadio411">Diario</label>
+          </div>
+          <div class="custom-control custom-radio">
+            <input type="radio" id="customRadio412" name="pre41" class="form-check-input" value="option2">
+            <label class="form-check-label" for="customRadio412">Semanal</label>
+          </div>
+          <div class="custom-control custom-radio">
+            <input type="radio" id="customRadio413" name="pre41" class="form-check-input" value="option3">
+            <label class="form-check-label" for="customRadio413">Mes</label>
+          </div>
+
+          <div>
+            <input name="pre41Obs" type="text" class="form-control" id="formGroupExampleInput41"
+              placeholder="Observación (opcional)">
+          </div>
+
+          <!--42 Pregunta-->
+
+          <div>
+            <label for="formGroupExampleInput42">42 ¿Las copias de respaldo deben almacenarse en un lugar
+              diferente?</label>
+          </div>
+          <div class="custom-control custom-radio">
+            <input type="radio" id="customRadio421" name="pre42" class="form-check-input" value="option1" checked>
+            <label class="form-check-label" for="customRadio421">En la misma PC</label>
+          </div>
+          <div class="custom-control custom-radio">
+            <input type="radio" id="customRadio422" name="pre42" class="form-check-input" value="option2">
+            <label class="form-check-label" for="customRadio422">Servidor(google,aws)</label>
+          </div>
+          <div class="custom-control custom-radio">
+            <input type="radio" id="customRadio423" name="pre42" class="form-check-input" value="option3">
+            <label class="form-check-label" for="customRadio423">Ambos</label>
+          </div>
+
+          <div>
+            <input name="pre42Obs" type="text" class="form-control" id="formGroupExampleInput42"
+              placeholder="Observación (opcional)">
+          </div>
+
+          <!--43 Pregunta-->
+
+          <div>
+            <label for="formGroupExampleInput43">43 ¿Deben tomarse precauciones contra el fuego, el daño provocado por
+              agua o el robo?</label>
+          </div>
+          <div class="custom-control custom-switch">
+            <div class="custom-control custom-switch">
+              <input name="pre43x1" type="checkbox" class="custom-control-input" id="customSwitch431">
+              <label class="custom-control-label" for="customSwitch431">Preucación contra el fuego</label>
+            </div>
+            <div class="custom-control custom-switch">
+              <input name="pre43x2" type="checkbox" class="custom-control-input" id="customSwitch432">
+              <label class="custom-control-label" for="customSwitch432">Preucación contra el agua</label>
+            </div>
+            <div class="custom-control custom-switch">
+              <input name="pre43x3" type="checkbox" class="custom-control-input" id="customSwitch433">
+              <label class="custom-control-label" for="customSwitch433">Preucación contra robo</label>
+            </div>
+
+
+          </div>
+
+          <div>
+            <input name="pre43Obs" type="text" class="form-control" id="formGroupExampleInput43"
+              placeholder="Observación (opcional)">
+          </div>
+        </div>
+
+        <!--44 Pregunta-->
+        <div class="jumbotron">
+          <input class="form-control" type="text" placeholder="Documentación" readonly disabled>
+
+          <div>
+            <label for="formGroupExampleInput44">44 ¿Cuánta documentación se requiere?</label>
+          </div>
+
+          <div class="custom-control custom-radio">
+            <input type="radio" id="customRadio441" name="pre44" class="form-check-input" value="option1" checked>
+            <label class="form-check-label" for="customRadio441">Básico</label>
+          </div>
+          <div class="custom-control custom-radio">
+            <input type="radio" id="customRadio442" name="pre44" class="form-check-input" value="option2">
+            <label class="form-check-label" for="customRadio442">Necesario</label>
+          </div>
+          <div class="custom-control custom-radio">
+            <input type="radio" id="customRadio443" name="pre44" class="form-check-input" value="option3">
+            <label class="form-check-label" for="customRadio443">Todo</label>
+          </div>
+
+          <div>
+            <input name="pre44Obs" type="text" class="form-control" id="formGroupExampleInput44"
+              placeholder="Observación (opcional)">
+          </div>
+
+
+          <!--45 Pregunta-->
+
+          <div>
+            <label for="formGroupExampleInput45">45 ¿Debe estar en línea, en papel o en ambos?</label>
+          </div>
+          <div class="custom-control custom-radio">
+            <input type="radio" id="customRadio451" name="pre45" class="form-check-input" value="option1" checked>
+            <label class="form-check-label" for="customRadio451">Online</label>
+          </div>
+          <div class="custom-control custom-radio">
+            <input type="radio" id="customRadio452" name="pre45" class="form-check-input" value="option2">
+            <label class="form-check-label" for="customRadio452">Papel</label>
+          </div>
+          <div class="custom-control custom-radio">
+            <input type="radio" id="customRadio453" name="pre45" class="form-check-input" value="option3">
+            <label class="form-check-label" for="customRadio453">Ambos</label>
+          </div>
+
+          <div>
+            <input name="pre45Obs" type="text" class="form-control" id="formGroupExampleInput45"
+              placeholder="Observación (opcional)">
+          </div>
+
+          <!--46 Pregunta-->
+
+          <div>
+            <label for="formGroupExampleInput46">46 ¿A que audiencia está orientado cada tipo de información?</label>
+          </div>
+          <div class="custom-control custom-radio">
+            <input type="radio" id="customRadio461" name="pre46" class="form-check-input" value="option1" checked>
+            <label class="form-check-label" for="customRadio461">Dueña</label>
+          </div>
+          <div class="custom-control custom-radio">
+            <input type="radio" id="customRadio462" name="pre46" class="form-check-input" value="option2">
+            <label class="form-check-label" for="customRadio462">Vendedores</label>
+          </div>
+          <div class="custom-control custom-radio">
+            <input type="radio" id="customRadio463" name="pre46" class="form-check-input" value="option3">
+            <label class="form-check-label" for="customRadio463">Ambos</label>
+          </div>
+
+          <div>
+            <input name="pre46Obs" type="text" class="form-control" id="formGroupExampleInput46"
+              placeholder="Observación (opcional)">
+          </div>
+
+        </div>
 
 
 
