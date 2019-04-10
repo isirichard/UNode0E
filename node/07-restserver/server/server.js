@@ -1,3 +1,8 @@
+//mongoatlas
+//user: isinick
+//pass: GMQjGNx54RnVHYlD
+//MongoDB URL
+//mongodb+srv://isinick:GMQjGNx54RnVHYlD@cluster0-7ewho.mongodb.net/cafe
 require('./config/config');
 const express = require('express');
 const mongoose = require('mongoose');
@@ -13,7 +18,7 @@ app.use(bodyParser.json())
 app.use(require('./routes/usuario'))
 
 
-mongoose.connect('mongodb://localhost:27017/cafe', { useNewUrlParser: true, useCreateIndex: true, useFindAndModify: false }, (err, res) => {
+mongoose.connect(process.env.URLDB, { useNewUrlParser: true, useCreateIndex: true, useFindAndModify: false }, (err, res) => {
     if (err) throw err;
     console.log('Base de datos ONLINE');
 });

@@ -5,7 +5,33 @@ const app = express();
 const Usuario = require('../models/usuario');
 
 app.get('/usuario', function(req, res) {
-    res.json('get Usuario Local!!!')
+    //{estado:true}
+
+    let desde = req.query.desde || 0;
+    desde = Number(desde);
+    let limite = req.query.limite || 5;
+    limite = Number(limite);
+
+    Usuario.find({ estado: true }, 'nombre email role estado google img')
+        .skip(desde)
+        .limit(limite)
+        .exec((err, usuarios) => {
+            if (err) {
+                return res.status(400).json({
+                    ok: false,
+                    err: err
+                });
+            }
+            Usuario.countDocuments({ estado: true }, (err, conteo) => {
+                res.json({
+                    ok: true,
+                    usuarios: usuarios,
+                    cuantos: conteo
+                });
+            });
+
+        });
+
 });
 
 app.post('/usuario', function(req, res) {
@@ -56,8 +82,38 @@ app.put('/usuario/:id', function(req, res) {
 
 });
 
-app.delete('/usuario', function(req, res) {
-    res.json('delete Usuario')
+app.delete('/usuario/:id', function(req, res) {
+    let id = req.params.id;
+
+    //Usuario.findByIdAndRemove(id, (err, usuarioBorrado) => {
+    let cambiaEstado = {
+        estado: false
+    }
+    Usuario.findByIdAndUpdate(id, cambiaEstado, { new: true }, (err, usuarioBorrado) => {
+
+        if (err) {
+            return res.status(400).json({
+                ok: false,
+                err: err
+            });
+        };
+        if (!usuarioBorrado) {
+            return res.status(400).json({
+                ok: false,
+                err: {
+                    message: 'Usuario no encontrado'
+                }
+            });
+        }
+
+        res.json({
+            ok: true,
+            usuario: usuarioBorrado
+        })
+    });
+
+
+
 });
 
 module.exports = app;
