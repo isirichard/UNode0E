@@ -62,3 +62,31 @@ app.get('/about', (req, res) => {
 app.listen(port, () => {
     console.log(`Escuchando peticiones en el puerto ${port}`);
 });
+
+
+
+// var javascriptLpSolver = require("javascript-lp-solver"),
+//     results,
+//     model={
+//         "optimize": "ganancia",
+//         "opType": "max",
+//         "constraints": {
+//             "conCafe": {"max": 120},
+//             "sinCafe": {"max": 180}
+//         },
+//         "variables":{
+//             "TipoA":{
+//                 "ganancia":6,
+//                 "conCafe": 3,
+//                 "sinCafe": 3
+//             },
+//             "TipoB":{
+//                 "ganancia":5,
+//                 "conCafe": 2,
+//                 "sinCafe": 4
+//             },
+
+//         }
+//     };
+// resuls =javascriptLpSolver.Solve(model);
+// console.log(resuls);
