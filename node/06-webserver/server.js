@@ -59,34 +59,45 @@ app.get('/about', (req, res) => {
 
 });
 
+app.get('/ioperacion', (req, res) => {
+    res.render('ioperacion');
+
+});
+
 app.listen(port, () => {
     console.log(`Escuchando peticiones en el puerto ${port}`);
 });
 
+app.post('/solver', (req, res) => {
+    let body = req.body;
+    console.log(body);
+    var javascriptLpSolver = require("javascript-lp-solver"),
+        results,
+        model = {
+            "optimize": "ganancia",
+            "opType": "max",
+            "constraints": {
+                "conCafe": { "max": body.rf1 }, //120
+                "sinCafe": { "max": body.rf2 } //180
+            },
+            "variables": {
+                "TipoA": {
+                    "ganancia": body.z1, //6
+                    "conCafe": body.r11, //3
+                    "sinCafe": body.r21 //3
+                },
+                "TipoB": {
+                    "ganancia": body.z2, //5
+                    "conCafe": body.r12, //2
+                    "sinCafe": body.r22 //4
+                },
 
+            }
+        };
+    results = javascriptLpSolver.Solve(model);
 
-// var javascriptLpSolver = require("javascript-lp-solver"),
-//     results,
-//     model={
-//         "optimize": "ganancia",
-//         "opType": "max",
-//         "constraints": {
-//             "conCafe": {"max": 120},
-//             "sinCafe": {"max": 180}
-//         },
-//         "variables":{
-//             "TipoA":{
-//                 "ganancia":6,
-//                 "conCafe": 3,
-//                 "sinCafe": 3
-//             },
-//             "TipoB":{
-//                 "ganancia":5,
-//                 "conCafe": 2,
-//                 "sinCafe": 4
-//             },
+    console.log(results);
 
-//         }
-//     };
-// resuls =javascriptLpSolver.Solve(model);
-// console.log(resuls);
+    res.send(results);
+
+});
