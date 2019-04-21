@@ -35,6 +35,7 @@ mongoose.connect(process.env.URLDB, { useNewUrlParser: true, useCreateIndex: tru
     }
     console.log('Base de datos ONLINE');
 });
+mongoose.set('useCreateIndex', true);
 
 
 app.listen(process.env.PORT, () => {
