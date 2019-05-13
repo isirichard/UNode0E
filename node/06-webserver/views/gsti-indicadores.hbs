@@ -1,0 +1,179 @@
+{{> head}}
+{{> navbar}}
+<div class="jumbotron">
+  <div id="matriz"></div>
+</div>
+{{> footer}}
+<script>
+  $(document).ready(function () {
+    listarMatriz();
+
+
+  });
+  function mostrarMedida(objetivoArray, json) {
+    let conte = 0;
+    let prom = 0;
+    //console.log(objetivoArray.length);
+    for(let i=0;i<objetivoArray.length;i++){
+     for(let j=0;j<json.length;j++){
+       if(objetivoArray[i]===json[j].objetivo){
+        prom++;
+        conte=conte+parseFloat(document.getElementById("table_matriz").rows[j+1].cells[7].innerText);
+       }
+     }
+     //console.log(prom);
+     conte=conte/prom;
+     //console.log(parseFloat(conte).toFixed(2));
+     for(let j=0;j<json.length;j++){
+       if(objetivoArray[i]===json[j].objetivo){
+        if(conte>=1){
+          document.getElementById("table_matriz").rows[j+1].cells[8].innerText="Se ha logrado el objetivo";
+          document.getElementById("table_matriz").rows[j+1].cells[8].classList="bg-primary  text-white";
+        }else if(conte>=0.8){
+          document.getElementById("table_matriz").rows[j+1].cells[8].innerText="Se esta logrando el objetivo";
+          document.getElementById("table_matriz").rows[j+1].cells[8].classList="bg-success text-white";
+        }
+        else if(conte>=0.24){
+          document.getElementById("table_matriz").rows[j+1].cells[8].innerText="Hay que tomar medidas";
+          document.getElementById("table_matriz").rows[j+1].cells[8].classList="bg-warning text-white";
+        }
+        else if(conte<0.24){
+          document.getElementById("table_matriz").rows[j+1].cells[8].innerText="Hay que tomar medidas Urgentes";
+          document.getElementById("table_matriz").rows[j+1].cells[8].classList="bg-danger  text-white";
+        }
+       }
+     }
+     conte=0;
+     prom=0;
+    }
+  }
+  function listarMatriz() {
+    $.ajax({
+      // la URL para la petición
+      url: '/matriz',
+
+      // la información a enviar
+      // (también es posible utilizar una cadena de datos)
+      data: { id: 123 },
+
+      // especifica si será una petición POST o GET
+      type: 'GET',
+
+      // el tipo de información que se espera de respuesta
+      dataType: 'json',
+
+      // código a ejecutar si la petición es satisfactoria;
+      // la respuesta es pasada como argumento a la función
+      success: function (json) {
+        let keys = Object.keys(json.matriz[0]);
+        //console.log(json);
+        //console.log(json.matriz[0].meta.length);
+        //console.log(keys2);
+        //console.log(json.meta[0]);
+        //console.log(json.meta);
+        //console.log(json.matriz[1].indicador);
+        //console.log(json.matriz[1]);
+        //console.log(json.matriz.length);
+        //console.log(keys[2]);
+
+
+        //for (fil = 0; fil < json.meta.length; fil++) {
+        //for (col = 0; col < keys.length; col++) {
+        // Controlando que json realmente tenga esa propiedad
+        //if (json.hasOwnProperty(clave))
+        //console.log("La clave es " + keys[col] + " y el valor es " + json.matriz[fil][keys[col]]);
+        //}
+        //}
+
+
+        //table-light
+        let tabla = "<table id=\"table_matriz\" class=\"table table-hover table-condensed table table-sm table-light\"  border=\"0\">";
+
+        tabla += "<thead class=\"thead-dark\"><tr><th scope=\"col\"></th>";
+        //for (j = 0; j < keys.length; j++) {
+        //tabla += "<td>" + keys[j] + "</td>";
+        //}
+        tabla += "<th scope=\"col\">" + keys[3] + "</th>";
+        tabla += "<th scope=\"col\">" + keys[4] + "</th>";
+        tabla += "<th scope=\"col\">" + keys[5] + "</th>";
+        //console.log(json.meta.length);
+        tabla += "<th scope=\"col\">metas</th>";
+        tabla += "<th scope=\"col\">peligro</th>";
+        tabla += "<th scope=\"col\">preucación</th>";
+        tabla += "<th scope=\"col\">valor Real</th>";
+        tabla += "<th scope=\"col\">medidas</th>";
+        //tabla += "<th scope=\"col\">" + keys[3] + "</th>";
+        //tabla += "<th scope=\"col\">" + keys[4] + "</th>";
+
+
+        tabla += "</tr></thead>";
+        let countfil = 1;
+        let objetivoArray = [];
+        let valorReal = 0;
+
+        tabla += "<tbody >";
+        for (fil = 0; fil < json.matriz.length; fil++) {
+          tabla += "<tr>";
+
+          //for (col = 0; col < keys.length; col++) {
+          //  tabla += "<td>" + "<input type=\"text\" size=\"1\" value=\"" + json.matriz[fil][keys[col]] + "\">" + "</td>";
+          //}
+
+          //console.log(jsonUnique.includes(json.meta[fil].matriz._id));
+
+
+          tabla += "<th scope=\"row\">" + countfil++ + "</th>";
+          tabla += "<td>" + json.matriz[fil].tipo.tipo + "</td>";
+          tabla += "<td>" + json.matriz[fil].objetivo + "</td>";
+          tabla += "<td>" + json.matriz[fil].indicador + "</td>";
+
+          tabla += "<td>1.00</td>";
+          tabla += "<td>0.24</td>";
+          tabla += "<td>0.80</td>";
+
+          let sum = 0;
+          for (i = 0; i < json.matriz[fil].meta.length; i++) {
+            sum = sum + parseInt(json.matriz[fil].meta[i]);
+          }
+          tabla += "<td>" + sum / 5 + "</td>";
+         
+          if (!objetivoArray.includes(json.matriz[fil].objetivo)) {
+            objetivoArray.push(json.matriz[fil].objetivo)
+            tabla += "<td class=\"bg-danger text-white\" ></td>";
+          } else {
+            tabla += "<td></td>";
+          }
+
+          tabla += "<td class=\"d-none\">" + json.matriz[fil]._id + "</td>";
+
+          //tabla += "<td>" + "<input type=\"text\" class=\"form-control\" size=\"1\" value=\"" + json.meta[j].valor + "\"/>" + "</td>";
+
+          tabla += "</tr></tbody>";
+        }
+        tabla += "</table>";
+        document.getElementById("matriz").innerHTML = tabla;
+        mostrarMedida(objetivoArray, json.matriz);
+
+
+
+
+      },
+
+      // código a ejecutar si la petición falla;
+      // son pasados como argumentos a la función
+      // el objeto de la petición en crudo y código de estatus de la petición
+
+      error: function (xhr, status) {
+        console.log('Disculpe, existió un problema');
+      },
+
+      // código a ejecutar sin importar si la petición falló o no
+      complete: function (xhr, status) {
+        console.log('Petición realizada');
+      }
+
+    });
+  }
+
+
+</script>

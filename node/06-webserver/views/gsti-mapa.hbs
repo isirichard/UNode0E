@@ -1,0 +1,351 @@
+{{> head}}
+{{> navbar}}
+<div class="jumbotron border border-light m-1 p-0">
+  <div class="container p-2 m-1">
+    <div class="row" id="financiera"></div>
+  </div>
+
+</div>
+<div class="jumbotron border border-light m-1 p-0">
+  <div class="container p-2 m-1">
+    <div class="row" id="clientes"></div>
+  </div>
+</div>
+<div class="jumbotron border border-light m-1 p-0">
+  <div class="container p-2 m-1">
+    <div class="row" id="procesos"></div>
+  </div>
+</div>
+<div class="jumbotron border border-light m-1 p-0">
+  <div class="container p-2 m-1">
+    <div class="row" id="formacion"></div>
+  </div>
+</div>
+{{> footer}}
+
+<script>
+  $(document).ready(function () {
+    listarMatriz();
+  });
+
+  function mostrarMedida(tipoArray, json, objetivoArray) {
+    //console.log(json);
+    let financiera = `<div class="col-xs-4 p-2">
+                  <div class="card text-center bg-light  text-dark" style="width: 10rem;">
+                    <div class="card-body">
+                      <p class="card-text">Financiera</p>
+                    </div>
+                  </div>
+                </div>`;
+    let clientes = `<div class="col-xs-4 p-2">
+                  <div class="card text-center bg-light  text-dark" style="width: 10rem;">
+                    <div class="card-body">
+                      <p class="card-text">Clientes</p>
+                    </div>
+                  </div>
+                </div>`;
+    let procesos = `<div class="col-xs-4 p-2">
+                  <div class="card text-center bg-light  text-dark" style="width: 10rem;">
+                    <div class="card-body">
+                      <p class="card-text">Procesos Internos</p>
+                    </div>
+                  </div>
+                </div>`;
+    let formacion = `<div class="col-xs-4 p-2">
+                  <div class="card text-center bg-light  text-dark" style="width: 10rem;">
+                    <div class="card-body">
+                      <p class="card-text">Formación y Crecimiento</p>
+                    </div>
+                  </div>
+                </div>`;
+
+    let conte = 0;
+    let sum = 0;
+    let auxProm = 0;
+    let tipo = 0;
+
+
+    for (obj = 0; obj < objetivoArray.length; obj++) {
+      for (fil = 0; fil < json.length; fil++) {
+        if (objetivoArray[obj] === json[fil].objetivo) {
+          auxProm++;
+          for (i = 0; i < json[fil].meta.length; i++) {
+            sum = sum + parseInt(json[fil].meta[i]);
+          }
+          tipo = json[fil].tipo.tipo;
+          sum = sum / 5;
+          conte = conte + sum;
+          sum = 0;
+        }
+      }
+
+      conte = conte / auxProm;
+
+      switch (true) {
+        case conte >= 1.00:
+          console.log("Se ha logrado el objetivo");
+          switch (tipo) {
+            case "Financiera":
+              financiera +=
+                `<div class="col-xs-4 p-2">
+                  <div class="card text-center bg-primary  text-white" style="width: 10rem;">
+                    <div class="card-body">
+                      <p class="card-text">${objetivoArray[obj]}</p>
+                    </div>
+                  </div>
+                </div>`;
+              console.log("Se ha logrado Financiera");
+
+              break;
+            case "Clientes":
+              clientes +=
+                `<div class="col-xs-4 p-2">
+                  <div class="card text-center bg-primary  text-white" style="width: 10rem;">
+                    <div class="card-body">
+                      <p class="card-text">${objetivoArray[obj]}</p>
+                    </div>
+                  </div>
+                </div>`;
+              console.log("Se ha logrado Clientes");
+              break;
+            case "Procesos Internos":
+              procesos +=
+                `<div class="col-xs-4 p-2">
+                  <div class="card text-center bg-primary  text-white" style="width: 10rem;">
+                    <div class="card-body">
+                      <p class="card-text">${objetivoArray[obj]}</p>
+                    </div>
+                  </div>
+                </div>`;
+              console.log("Se ha logrado Procesos");
+              break;
+            case "Formación y Crecimiento":
+              formacion +=
+                `<div class="col-xs-4 p-2">
+                  <div class="card text-center bg-primary  text-white" style="width: 10rem;">
+                    <div class="card-body">
+                      <p class="card-text">${objetivoArray[obj]}</p>
+                    </div>
+                  </div>
+                </div>`;
+              console.log("Se ha logrado Formación");
+              break;
+            default:
+              console.log("Error de switch2");
+              break;
+          }
+
+          break;
+        case conte >= 0.8:
+          console.log("Se esta logrando el objetivo");
+          switch (tipo) {
+            case "Financiera":
+              financiera +=
+                `<div class="col-xs-4 p-2">
+                  <div class="card text-center bg-success  text-white" style="width: 10rem;">
+                    <div class="card-body">
+                      <p class="card-text">${objetivoArray[obj]}</p>
+                    </div>
+                  </div>
+                </div>`;
+              console.log("Se ha logrado Financiera");
+
+              break;
+            case "Clientes":
+              clientes +=
+                `<div class="col-xs-4 p-2">
+                  <div class="card text-center bg-success  text-white" style="width: 10rem;">
+                    <div class="card-body">
+                      <p class="card-text">${objetivoArray[obj]}</p>
+                    </div>
+                  </div>
+                </div>`;
+              console.log("Se ha logrado Clientes");
+              break;
+            case "Procesos Internos":
+              procesos +=
+                `<div class="col-xs-4 p-2">
+                  <div class="card text-center bg-success  text-white" style="width: 10rem;">
+                    <div class="card-body">
+                      <p class="card-text">${objetivoArray[obj]}</p>
+                    </div>
+                  </div>
+                </div>`;
+              console.log("Se ha logrado Procesos");
+              break;
+            case "Formación y Crecimiento":
+              formacion +=
+                `<div class="col-xs-4 p-2">
+                  <div class="card text-center bg-success  text-white" style="width: 10rem;">
+                    <div class="card-body">
+                      <p class="card-text">${objetivoArray[obj]}</p>
+                    </div>
+                  </div>
+                </div>`;
+              console.log("Se ha logrado Formación");
+              break;
+            default:
+              console.log("Error de switch2");
+              break;
+          }
+          break;
+        case conte >= 0.24:
+          console.log("Hay que tomar medidas");
+          switch (tipo) {
+            case "Financiera":
+              financiera +=
+                `<div class="col-xs-4 p-2">
+                  <div class="card text-center bg-warning  text-white" style="width: 10rem;">
+                    <div class="card-body">
+                      <p class="card-text">${objetivoArray[obj]}</p>
+                    </div>
+                  </div>
+                </div>`;
+              console.log("Se ha logrado Financiera");
+
+              break;
+            case "Clientes":
+              clientes +=
+                `<div class="col-xs-4 p-2">
+                  <div class="card text-center bg-warning  text-white" style="width: 10rem;">
+                    <div class="card-body">
+                      <p class="card-text">${objetivoArray[obj]}</p>
+                    </div>
+                  </div>
+                </div>`;
+              console.log("Se ha logrado Clientes");
+              break;
+            case "Procesos Internos":
+              procesos +=
+                `<div class="col-xs-4 p-2">
+                  <div class="card text-center bg-warning  text-white" style="width: 10rem;">
+                    <div class="card-body">
+                      <p class="card-text">${objetivoArray[obj]}</p>
+                    </div>
+                  </div>
+                </div>`;
+              console.log("Se ha logrado Procesos");
+              break;
+            case "Formación y Crecimiento":
+              formacion +=
+                `<div class="col-xs-4 p-2">
+                  <div class="card text-center bg-warning  text-white" style="width: 10rem;">
+                    <div class="card-body">
+                      <p class="card-text">${objetivoArray[obj]}</p>
+                    </div>
+                  </div>
+                </div>`;
+              console.log("Se ha logrado Formación");
+              break;
+            default:
+              console.log("Error de switch2");
+              break;
+          }
+          break;
+        case conte < 0.24:
+          console.log("Hay que tomar medidas Urgentes");
+          switch (tipo) {
+            case "Financiera":
+              financiera +=
+                `<div class="col-xs-4 p-2">
+                  <div class="card text-center bg-danger  text-white" style="width: 10rem;">
+                    <div class="card-body">
+                      <p class="card-text">${objetivoArray[obj]}</p>
+                    </div>
+                  </div>
+                </div>`;
+              console.log("Se ha logrado Financiera");
+
+              break;
+            case "Clientes":
+              clientes +=
+                `<div class="col-xs-4 p-2">
+                  <div class="card text-center bg-danger  text-white" style="width: 10rem;">
+                    <div class="card-body">
+                      <p class="card-text">${objetivoArray[obj]}</p>
+                    </div>
+                  </div>
+                </div>`;
+              console.log("Se ha logrado Clientes");
+              break;
+            case "Procesos Internos":
+              procesos +=
+                `<div class="col-xs-4 p-2">
+                  <div class="card text-center bg-danger  text-white" style="width: 10rem;">
+                    <div class="card-body">
+                      <p class="card-text">${objetivoArray[obj]}</p>
+                    </div>
+                  </div>
+                </div>`;
+              console.log("Se ha logrado Procesos");
+              break;
+            case "Formación y Crecimiento":
+              formacion +=
+                `<div class="col-xs-4 p-2">
+                  <div class="card text-center bg-danger  text-white" style="width: 10rem;">
+                    <div class="card-body">
+                      <p class="card-text">${objetivoArray[obj]}</p>
+                    </div>
+                  </div>
+                </div>`;
+              console.log("Se ha logrado Formación");
+              break;
+            default:
+              console.log("Error de switch2");
+              break;
+          }
+          break;
+
+        default:
+          console.log("Error de switch");
+          break;
+      }
+      auxProm = 0;
+      conte = 0;
+    }
+
+    document.getElementById("financiera").innerHTML = financiera;
+    document.getElementById("clientes").innerHTML = clientes;
+    document.getElementById("procesos").innerHTML = procesos;
+    document.getElementById("formacion").innerHTML = formacion;
+  }
+
+  function listarMatriz() {
+    $.ajax({
+      url: '/matriz',
+      data: { id: 123 },
+      type: 'GET',
+      dataType: 'json',
+      success: function (json) {
+        let tipoArray = [];
+        let objetivoArray = [];
+
+
+
+        for (fil = 0; fil < json.matriz.length; fil++) {
+          if (!objetivoArray.includes(json.matriz[fil].objetivo)) {
+            objetivoArray.push(json.matriz[fil].objetivo)
+          }
+          if (!tipoArray.includes(json.matriz[fil].tipo.tipo)) {
+            tipoArray.push(json.matriz[fil].tipo.tipo)
+          }
+        }
+        //document.getElementById("matriz").innerHTML = "";
+        mostrarMedida(tipoArray, json.matriz, objetivoArray);
+
+      },
+
+      error: function (xhr, status) {
+        console.log('Disculpe, existió un problema');
+      },
+
+      // código a ejecutar sin importar si la petición falló o no
+      complete: function (xhr, status) {
+        console.log('Petición realizada');
+      }
+
+    });
+  }
+
+
+</script>

@@ -1,0 +1,365 @@
+{{> head}}
+{{> navbar}}
+
+<div  class="jumbotron">
+  <form id="formMatriz">
+    <div class="form-group row">
+      <label for="scoreBoard" class="col-sm-2 col-form-label">ScoreBoard</label>
+      <div class="col-sm-10">
+        <select name="tipo" id="scoreBoard" class="custom-select">
+
+        </select>
+      </div>
+    </div>
+
+    <div class="form-group row">
+      <label for="inputObjetivo" class="col-sm-2 col-form-label">Objetivo E</label>
+      <div class="col-sm-10">
+        <input type="text" class="form-control" name="objetivo" id="inputObjetivo"
+          placeholder="Ingrese Objetivo Estrategico">
+      </div>
+    </div>
+    <div class="form-group row">
+      <label for="inputIndicador" class="col-sm-2 col-form-label">Indicador</label>
+      <div class="col-sm-10">
+        <input type="text" class="form-control" name="indicador" id="inputIndicador" placeholder="Ingrese Indicador">
+      </div>
+    </div>
+
+    <div class="form-group row">
+      <label for="unidadMedida" class="col-sm-2 col-form-label">Unidad de Medida</label>
+      <div class="col-sm-10">
+        <input type="text" class="form-control" name="unidadMedida" id="unidadMedida" placeholder="Ingrese Unidad de Medida">
+      </div>
+    </div>
+
+    
+
+    <div class="form-group row">
+      <label for="responsable" class="col-sm-2 col-form-label">Responsable</label>
+      <div class="col-sm-10">
+        <select name="responsable" id="responsable" class="custom-select">
+
+        </select>
+      </div>
+    </div>
+
+    <div class="form-group row">
+      <label for="inputCols" class="col-sm-2 col-form-label">Metas</label>
+      <div class="col-sm-3">
+        <input type="text" class="form-control" id="inputCols" placeholder="5 años" readonly disabled/>
+      </div>
+      <div class="col-sm-3">
+        <input type="text" class="form-control" id="inputDesde" placeholder="Desde el año 2015" readonly disabled/>
+      </div>
+
+      <div class="d-none">
+        <input type="text" class="form-control" name="idGuardado" id="idGuardado" placeholder="id Guardado"  />
+      </div>
+
+      <!-- <input type="button" id="crearUno" value="crear tabla" onclick="crear()" />
+      <input type="button" id="crearDos" value="Limpiar" onclick="crear2()" /> -->
+    </div>
+    <div id="resultado" class=""></div>
+
+    <div><input type="button" class="btn btn-info btn-sm btn-block " id="enviar" value="Crear" onclick="" />
+      <input type="button" class="btn btn-primary btn-sm btn-block" id="modificar" value="Modificar" onclick=""
+        disabled /></div>
+
+    <div class="table-responsive mt-3" id="matriz"></div>
+  </form>
+</div>
+
+
+<script>
+
+
+  function crear() {
+    var col = document.getElementById("inputCols").value;
+    //var filas = document.getElementById("rows").value;
+    var desde = document.getElementById("inputDesde").value;
+    if (!desde) {
+      desde = 2015;
+      col = 5;
+    }
+    var filas = 1;
+    var tabla = "<table id=\"tableMeta\" class=\"table table-sm\" border=\"0\">";
+
+    tabla += "<tr><td></td>";
+    for (j = 0; j < col; j++) {
+      tabla += "<td>" + (desde++) + "</td>";
+    }
+    tabla += "</tr>";
+
+    for (i = 0; i < filas; i++) {
+      tabla += "<tr>";
+      tabla += "<td>" + (i + 1) + "</td>";
+      for (j = 0; j < col; j++) {
+        tabla += "<td>" + "<input type=\"text\" name=\"metas\" class=\"form-control\" value=\"0\" size=\"1\">" + "</td>";
+      }
+      tabla += "</tr>";
+    }
+    tabla += "</table>";
+    document.getElementById("resultado").innerHTML = tabla;
+  }
+
+  function crear2() {
+    document.getElementById("resultado").innerHTML = "";
+  }
+</script>
+
+{{> footer}}
+<script>
+
+  $(document).ready(function () {
+    crear();
+    listarTipoObjetivo();
+    listarResponsable();
+    listarMatriz();
+
+  });
+
+  $('input#modificar').click(function () {
+    //console.log("entre al button");
+    console.log(`/matriz/${$("#idGuardado").val()}`);
+    
+    $.ajax({
+      url: `/matriz/${$("#idGuardado").val()}`,
+      type: 'PUT',
+      dataType: 'json',
+      data: $('form#formMatriz').serialize(),
+      success: function (json) {
+        listarMatriz();
+        $('#modificar').prop('disabled', true);
+        $('#enviar').prop('disabled', false);
+        
+      }
+    });
+  });
+
+  $('input#enviar').click(function () {
+    console.log("entre al button");
+    
+    $.ajax({
+      url: `/matriz`,
+      type: 'POST',
+      dataType: 'json',
+      data: $('form#formMatriz').serialize(),
+      success: function (json) {
+        listarMatriz();
+        
+      }
+    });
+  });
+
+
+
+  $(document).on('dblclick', '#table_matriz > tbody > tr', function () {
+    console.log($('#idGuardado').val());
+    $('#modificar').prop('disabled', false);
+    $('#enviar').prop('disabled', true);
+    buscarMatrizID($(this)[0].lastChild.textContent);
+  });
+  function buscarMatrizID(id) {
+    //console.log(id)
+    $.ajax({
+      type: "GET",
+      url: "/matriz/" + id,
+      data: { "accion": accion },
+      dataType: 'json',
+      error: function () {
+        alert("error petición ajax");
+      },
+      success: function (json) {
+        //console.log(json.matriz._id)
+        $(`#scoreBoard option[value='${json.matriz.tipo}']`).attr("selected", true);
+        //$(`#unidadMedida option[value='${json.matriz.unidadMedida}']`).attr("selected", true);
+        $(`#unidadMedida`).val(json.matriz.unidadMedida);
+        $(`#responsable option[value='${json.matriz.responsable}']`).attr("selected", true);
+        $(`#inputIndicador`).val(json.matriz.indicador);
+        $("#inputObjetivo").val(json.matriz.objetivo);
+        $("#idGuardado").val(json.matriz._id);
+        for(i=0;i<json.matriz.meta.length;i++)
+          document.getElementById("tableMeta").rows[1].cells[i+1].innerHTML="<input type=\"text\" name=\"metas\" class=\"form-control\" value="+json.matriz.meta[i]+" size=\"1\">";
+
+        
+
+      }
+    });
+
+
+  }
+
+  function listarResponsable() {
+    $.ajax({
+      type: "GET",
+      url: "/responsable",
+      data: { "accion": accion },
+      dataType: 'json',
+      error: function () {
+        alert("error petición ajax");
+      },
+      success: function (json) {
+
+        for (var i = 0; i < json.responsable.length; i++) {
+          var newRow = "<option id=" + json.responsable[i]._id + " value=" + json.responsable[i]._id + ">" + json.responsable[i].cargo + "</option>";
+          $(newRow).appendTo("#responsable");
+        }
+      }
+    });
+  }
+  function listarUnidadMedida() {
+    $.ajax({
+      type: "GET",
+      url: "/unidadMedida",
+      data: { "accion": accion },
+      dataType: 'json',
+      error: function () {
+        alert("error petición ajax");
+      },
+      success: function (json) {
+
+        for (var i = 0; i < json.unidadMedida.length; i++) {
+          var newRow = "<option id=" + json.unidadMedida[i]._id + " value=" + json.unidadMedida[i]._id + ">" + json.unidadMedida[i].descripcion + "</option>";
+          $(newRow).appendTo("#unidadMedida");
+        }
+      }
+    });
+  }
+  function listarTipoObjetivo() {
+    accion = "listadocat";
+    $.ajax({
+      type: "GET",
+      url: "/tipoObjetivo",
+      data: { "accion": accion },
+      dataType: 'json',
+      error: function () {
+        alert("error petición ajax");
+      },
+      success: function (json) {
+
+        for (var i = 0; i < json.tipoObjetivo.length; i++) {
+          var newRow = "<option id=" + json.tipoObjetivo[i]._id + " value=" + json.tipoObjetivo[i]._id + ">" + json.tipoObjetivo[i].tipo + "</option>";
+          $(newRow).appendTo("#scoreBoard");
+        }
+      }
+    });
+  }
+  function listarMatriz() {
+    $.ajax({
+      // la URL para la petición
+      url: '/matriz',
+
+      // la información a enviar
+      // (también es posible utilizar una cadena de datos)
+      data: { id: 123 },
+
+      // especifica si será una petición POST o GET
+      type: 'GET',
+
+      // el tipo de información que se espera de respuesta
+      dataType: 'json',
+
+      // código a ejecutar si la petición es satisfactoria;
+      // la respuesta es pasada como argumento a la función
+      success: function (json) {
+        var keys = Object.keys(json.matriz[0]);
+        console.log(keys);
+        //console.log(json);
+        //console.log(json.matriz[0].meta.length);
+        //console.log(keys2);
+        //console.log(json.meta[0]);
+        //console.log(json.meta);
+        //console.log(json.matriz[1].indicador);
+        //console.log(json.matriz[1]);
+        //console.log(json.matriz.length);
+        //console.log(keys[2]);
+
+
+        //for (fil = 0; fil < json.meta.length; fil++) {
+        //for (col = 0; col < keys.length; col++) {
+        // Controlando que json realmente tenga esa propiedad
+        //if (json.hasOwnProperty(clave))
+        //console.log("La clave es " + keys[col] + " y el valor es " + json.matriz[fil][keys[col]]);
+        //}
+        //}
+
+
+
+        var tabla = "<table id=\"table_matriz\" class=\"table table-hover table-condensed table table-sm table-light\"  border=\"0\">";
+
+        tabla += "<thead class=\"thead-dark\"><tr><th scope=\"col\"></th>";
+        //for (j = 0; j < keys.length; j++) {
+        //tabla += "<td>" + keys[j] + "</td>";
+        //}
+        tabla += "<th scope=\"col\">" + keys[3] + "</th>";
+        tabla += "<th scope=\"col\">" + keys[4] + "</th>";
+        tabla += "<th scope=\"col\">" + keys[5] + "</th>";
+        tabla += "<th scope=\"col\">" + keys[6] + "</th>";
+        tabla += "<th scope=\"col\">" + keys[7] + "</th>";
+        //console.log(json.meta.length);
+        var anio= 2015;
+        for (j = 0; j < json.matriz[0].meta.length; j++) {
+          tabla += "<th scope=\"col\">" + anio++ + "</th>";
+        }
+        //tabla += "<th scope=\"col\">" + keys[3] + "</th>";
+        //tabla += "<th scope=\"col\">" + keys[4] + "</th>";
+
+
+        tabla += "</tr></thead>";
+        var countfil = 1;
+
+
+        tabla += "<tbody >";
+        for (fil = 0; fil < json.matriz.length; fil++) {
+          tabla += "<tr>";
+
+          //for (col = 0; col < keys.length; col++) {
+          //  tabla += "<td>" + "<input type=\"text\" size=\"1\" value=\"" + json.matriz[fil][keys[col]] + "\">" + "</td>";
+          //}
+
+          //console.log(jsonUnique.includes(json.meta[fil].matriz._id));
+
+
+          tabla += "<th scope=\"row\">" + countfil++ + "</th>";
+          tabla += "<td>" + json.matriz[fil].tipo.tipo + "</td>";
+          tabla += "<td>" + json.matriz[fil].objetivo + "</td>";
+          tabla += "<td>" + json.matriz[fil].indicador + "</td>";
+          tabla += "<td>" + json.matriz[fil].unidadMedida + "</td>";
+          tabla += "<td>" + json.matriz[fil].responsable.cargo + "</td>";
+          for (j = 0; j < json.matriz[fil].meta.length; j++) {
+            tabla += "<td>" + json.matriz[fil].meta[j] + "</td>";
+          }
+          tabla += "<td class=\"d-none\">" + json.matriz[fil]._id + "</td>";
+
+          //tabla += "<td>" + "<input type=\"text\" class=\"form-control\" size=\"1\" value=\"" + json.meta[j].valor + "\"/>" + "</td>";
+
+          tabla += "</tr></tbody>";
+        }
+        tabla += "</table>";
+        document.getElementById("matriz").innerHTML = tabla;
+
+
+
+
+
+      },
+
+      // código a ejecutar si la petición falla;
+      // son pasados como argumentos a la función
+      // el objeto de la petición en crudo y código de estatus de la petición
+
+      error: function (xhr, status) {
+        console.log('Disculpe, existió un problema en mostrar');
+      },
+
+      // código a ejecutar sin importar si la petición falló o no
+      complete: function (xhr, status) {
+        console.log('Petición realizada');
+      }
+
+    });
+  }
+
+
+</script>
