@@ -32,5 +32,6 @@ app.use(require('./gsti-unidadMedida'));
 app.use(require('./gsti-matriz'));
 app.use(require('./gsti-meta'));
 app.use(require('./gsti-tipoObjetivo'));
+app.use(require('./das-pregunta'));
 
 module.exports = app;
