@@ -26,10 +26,7 @@ app.use(require('./gsti-tipoObjetivo'));
 
 app.use(require('./das'));
 app.use(require('./das-pregunta'));
-<<<<<<< HEAD
 app.use(require('./das-edu_rnf'));
-=======
 app.use(require('./das-especificacion'));
->>>>>>> 2c47f3ff7a928c9979437fd2da1c099dc4ee81a7
 
 module.exports = app;
