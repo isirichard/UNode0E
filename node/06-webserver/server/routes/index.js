@@ -33,5 +33,6 @@ app.use(require('./gsti-matriz'));
 app.use(require('./gsti-meta'));
 app.use(require('./gsti-tipoObjetivo'));
 app.use(require('./das-pregunta'));
+app.use(require('./das-edu_rnf'));
 
 module.exports = app;
