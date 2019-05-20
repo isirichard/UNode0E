@@ -22,4 +22,13 @@ app.get('/especificacion', (req, res) => {
     res.render('especificacion');
 });
 
+app.get('/preguntas', (req, res) => {
+    //res.send('Hola Mundo');
+    //res.render('home');
+    res.render('preguntas',{
+        nombre:"yonathab"
+    });
+});
+
+
 module.exports = app;
