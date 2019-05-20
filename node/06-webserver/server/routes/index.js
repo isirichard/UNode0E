@@ -15,24 +15,21 @@ app.get('/about', (req, res) => {
 });
 
 app.use(require('./pdf'));
-app.use(require('./das'));
 app.use(require('./io'));
 
-app.get('/gsti-matriz', (req, res) => {
-    res.render('gsti-matriz');
-});
-app.get('/gsti-indicadores', (req, res) => {
-    res.render('gsti-indicadores');
-});
-app.get('/gsti-mapa', (req, res) => {
-    res.render('gsti-mapa');
-});
+app.use(require('./gsti'));
 app.use(require('./gsti-responsable'));
 app.use(require('./gsti-unidadMedida'));
 app.use(require('./gsti-matriz'));
 app.use(require('./gsti-meta'));
 app.use(require('./gsti-tipoObjetivo'));
+
+app.use(require('./das'));
 app.use(require('./das-pregunta'));
+<<<<<<< HEAD
 app.use(require('./das-edu_rnf'));
+=======
+app.use(require('./das-especificacion'));
+>>>>>>> 2c47f3ff7a928c9979437fd2da1c099dc4ee81a7
 
 module.exports = app;
