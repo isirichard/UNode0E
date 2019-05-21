@@ -27,5 +27,6 @@ app.use(require('./gsti-tipoObjetivo'));
 app.use(require('./das'));
 app.use(require('./das-pregunta'));
 app.use(require('./das-especificacion'));
+app.use(require('./das-elicitacion.js'));
 
 module.exports = app;
