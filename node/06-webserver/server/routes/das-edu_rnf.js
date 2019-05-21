@@ -1,26 +1,32 @@
 const express = require('express');
 let app = express();
-let Pregunta = require('../models/pregunta');
+let Edu_rnf = require('../models/edu_rnf');
 
 // ======================
-// Crear una nueva pregunta
+// Crear un nuevo edu_rnf
 // =====================
-app.post('/pregunta', (req, res) => {
+app.post('/edu_rnf', (req, res) => {
     let body = req.body;
-    let pregunta = new Pregunta({
-        numero: body.numero,
-        pregunta: body.pregunta,
-        respuesta: body.respuesta,
-        
+    let edu_rnf = new Edu_rnf({
+        depende: body.depende,
+        genera: body.genera,
+        version: body.version,
+        autor: body.autor,
+        fuentes: body.fuentes,
+        descripcion: body.descripcion,
+        importancia:body.importancia,
+        tipo_requerimientos:body.tipo_requerimientos,
+        comentarios: body.comentarios,
+        estado: body.estado,
     });
-    pregunta.save((err, preguntaDB) => {
+    edu_rnf.save((err, edu_rnfDB) => {
         if (err) {
             return res.status(500).json({
                 ok: false,
                 err: err
             });
         }
-        if (!preguntaDB) {
+        if (!edu_rnfDB) {
             return res.status(400).json({
                 ok: false,
                 err
@@ -29,26 +35,26 @@ app.post('/pregunta', (req, res) => {
 
         res.status(201).json({
             ok: true,
-            pregunta: preguntaDB
+            edu_rnf: edu_rnfDB
         });
     });
 
 });
 
 // ======================
-// Obtener pregunta
+// Obtener edu_rnf
 // =====================
-app.get('/pregunta', (req, res) => {
+app.get('/edu_rnf', (req, res) => {
     // Trae todas las preguntas
     // let desde = req.query.desde || 0;
     // desde = Number(desde);
-    Pregunta.find({ estado: true })
+    Edu_rnf.find({ estado: true })
         // .skip(desde)
         // .limit(5)
         //.populate('usuario', 'nombre email')
         //.populate('categoria', 'descripcion')
         //populate -> cuando relacionamos tablas
-        .exec((err, pregunta) => {
+        .exec((err, edu_rnf) => {
             if (err) {
                 return res.status(500).json({
                     ok: false,
@@ -57,24 +63,23 @@ app.get('/pregunta', (req, res) => {
             }
             res.json({
                 ok: true,
-                pregunta: pregunta
+                edu_rnf: edu_rnf
             });
         })
 });
-
 // ======================
-// Borrar una nueva pregunta
+// Borrar un edu_rnf
 // =====================
-app.delete('/pregunta/:id', (req, res) => {
+app.delete('/edu_rnf/:id', (req, res) => {
     let id = req.params.id;
-    Pregunta.findById(id, (err, preguntaDB) => {
+    Edu_rnf.findById(id, (err, edu_rnfDB) => {
         if (err) {
             return res.status(500).json({
                 ok: false,
                 err
             });
         }
-        if (!preguntaDB) {
+        if (!edu_rnfDB) {
             return res.status(400).json({
                 ok: false,
                 err: {
@@ -84,8 +89,8 @@ app.delete('/pregunta/:id', (req, res) => {
             });
         }
 
-        preguntaDB.estado = false;
-        preguntaDB.save((err, preguntaBorrado) => {
+        edu_rnfDB.estado = false;
+        edu_rnfDB.save((err, edu_rnfBorrado) => {
             if (err) {
                 return res.status(500).json({
                     ok: false,
@@ -95,8 +100,8 @@ app.delete('/pregunta/:id', (req, res) => {
 
             res.json({
                 ok: true,
-                pregunta: preguntaBorrado,
-                mensaje: 'pregunta borrado'
+                edu_rnf: edu_rnfBorrado,
+                mensaje: 'Requisito no Funcional borrado'
             })
         });
 
@@ -104,23 +109,23 @@ app.delete('/pregunta/:id', (req, res) => {
   
 });
 // ======================
-// Obtener un pregunta por ID
+// Obtener un rnf por ID
 // =====================
-app.get('/pregunta/:id', (req, res) => {
+app.get('/edu_rnf/:id', (req, res) => {
     // populate: Usuario categoria
     // paginado
     let id = req.params.id;
-    Pregunta.findById(id)
+    Edu_rnf.findById(id)
         //.populate('usuario', 'nombre email')
         //.populate('categoria', 'descripcion')
-        .exec((err, preguntaDB) => {
+        .exec((err, edu_rnfDB) => {
             if (err) {
                 return res.status(500).json({
                     ok: false,
                     err
                 });
             }
-            if (!preguntaDB) {
+            if (!edu_rnfDB) {
                 return res.status(400).json({
                     ok: false,
                     err: {
@@ -131,20 +136,20 @@ app.get('/pregunta/:id', (req, res) => {
 
             res.json({
                 ok: true,
-                pregunta: preguntaDB
+                edu_rnf: edu_rnfDB
             })
         })
 });
 // ======================
-// Buscar Pregunta
+// Buscar edu_rnf termino
 // =====================
-app.get('/pregunta/buscar/:termino', (req, res) => {
+app.get('/edu_rnf/buscar/:termino', (req, res) => {
     let termino = req.params.termino;
     let regex = new RegExp(termino, 'i');
 
-    Pregunta.find({ pregunta: regex })
+    Edu_rnf.find({ edu_rnf: regex })
         //.populate('categoria', 'nombre')
-        .exec((err, pregunta) => {
+        .exec((err, edu_rnf) => {
             if (err) {
                 return res.status(500).json({
                     ok: false,
@@ -153,29 +158,27 @@ app.get('/pregunta/buscar/:termino', (req, res) => {
             }
             res.json({
                 ok: true,
-                pregunta: pregunta
+                edu_rnf: edu_rnf
             })
         })
 });
-
-
 // ======================
-// Actualizar una nueva pregunta
+// Actualizar un nuevo rnf
 // =====================
-app.put('/pregunta/:id', (req, res) => {
+app.put('/edu_rnf/:id', (req, res) => {
     // grabar el usuario
     // grabar una categoria del listado
     let id = req.params.id;
     let body = req.body;
 
-    Pregunta.findById(id, (err, preguntaDB) => {
+    Edu_rnf.findById(id, (err, edu_rnfDB) => {
         if (err) {
             return res.status(500).json({
                 ok: false,
                 err
             });
         }
-        if (!preguntaDB) {
+        if (!edu_rnfDB) {
             return res.status(400).json({
                 ok: false,
                 err: {
@@ -185,12 +188,18 @@ app.put('/pregunta/:id', (req, res) => {
             });
         }
 
-        preguntaDB.numero = body.numero;
-        preguntaDB.pregunta = body.pregunta;
-        preguntaDB.respuesta = body.respuesta;
-        preguntaDB.estado = body.estado;
+        edu_rnfDB.depende = body.depende;
+        edu_rnfDB.genera = body.genera;
+        edu_rnfDB.version = body.version;
+        edu_rnfDB.autor = body.autor;
+        edu_rnfDB.fuentes=body.fuentes;
+        edu_rnfDB.descripcion=body.descripcion;
+        edu_rnfDB.importancia=body.importancia;
+        edu_rnfDB.tipo_requerimientos=body.tipo_requerimientos;
+        edu_rnfDB.comentarios=body.comentarios;
+        edu_rnfDB.estado=body.estado;
 
-        preguntaDB.save((err, preguntaGuardado) => {
+        edu_rnfDB.save((err, edu_rnfGuardado) => {
             if (err) {
                 return res.status(500).json({
                     ok: false,
@@ -199,13 +208,11 @@ app.put('/pregunta/:id', (req, res) => {
             }
             res.json({
                 ok: true,
-                pregunta: preguntaGuardado
+                edu_rnf: edu_rnfGuardado
             })
         });
 
     });
 
 });
-
-
 module.exports = app;
